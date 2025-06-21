@@ -1,0 +1,351 @@
+# Plan de Implementación de Microsoft Sentinel - Latitud42
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Implementación - Latitud42</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .canvas-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #3498db;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin: 15px 0 10px;
+            font-size: 18px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+            white-space: pre-wrap;
+        }
+        
+        .mermaid-block {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+        
+        .quick-wins {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+        }
+        
+        .config {
+            background: #eafaf1;
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .roadmap {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+            text-align: center;
+        }
+        
+        .contact {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <header>
+            <h1>Plan de Implementación: Microsoft Sentinel</h1>
+            <p class="subtitle">Elaborado por Latitud42</p>
+        </header>
+
+        <div class="section">
+            <h2>🔍 Mapeo de Funciones Sentinel vs. Fases del Plan</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Función Sentinel</th>
+                        <th>Fase</th>
+                        <th>Acciones Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hunting</strong></td>
+                        <td>Fase 1 y 3</td>
+                        <td>KQL para detección de logins anómalos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MITRE ATT&CK</strong></td>
+                        <td>Fase 3</td>
+                        <td>Mapeo de T1021 (Lateral Movement)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Notebooks</strong></td>
+                        <td>Fase 2 y 4</td>
+                        <td>Automatización análisis root cause</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Workbooks</strong></td>
+                        <td>Fase 5</td>
+                        <td>Dashboards ejecutivos con KPIs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entity Behavior</strong></td>
+                        <td>Fase 3</td>
+                        <td>Detección de viajes imposibles</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Automation</strong></td>
+                        <td>Fase 4</td>
+                        <td>Playbooks para bloqueo de IPs</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Guía Paso a Paso</h2>
+            
+            <h3>1. Configuración Inicial (Semana 1)</h3>
+            <p>Consulta KQL para Hunting:</p>
+            <div class="code-block">
+SigninLogs 
+| where RiskLevelDuringSignin == "high"
+| extend Location = geo_info_from_ip(IPAddress)
+| project TimeGenerated, UserPrincipalName, IPAddress, Location
+            </div>
+
+            <h3>2. Automatización Básica (Semana 2-3)</h3>
+            <p>Flujo de Playbook (Logic Apps):</p>
+            <div class="mermaid-block">
+                <div class="mermaid">
+graph LR
+  A[Alerta de Defender for Office 365] --> B{{Logic App}}
+  B --> C[Bloquear IP en Cisco ASA]
+  B --> D[Notificar equipo SOC via Teams]
+  B --> E[Crear ticket en ServiceNow]
+                </div>
+            </div>
+
+            <h3>3. Caza Avanzada (Semana 4)</h3>
+            <p>Detección con MITRE ATT&CK:</p>
+            <div class="code-block">
+// T1059.001: PowerShell Malicioso
+SecurityEvent
+| where EventID == 4688 
+| where CommandLine contains "-EncodedCommand"
+| extend User = SubjectUserName
+| join kind=inner (ThreatIntelligenceIndicator) on $left.CommandLine contains $right.IndicatorValue
+            </div>
+
+            <h3>4. Reporting (Semana 5)</h3>
+            <p>Dashboard de Workbooks:</p>
+            <div class="mermaid-block">
+                <div class="mermaid">
+pie
+  title Distribución de Alertas por Severidad
+  "Crítico" : 25
+  "Alto" : 40
+  "Medio" : 20
+  "Bajo" : 15
+                </div>
+            </div>
+        </div>
+
+        <div class="section quick-wins">
+            <h2>⚡ Quick-Wins Inmediatos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Función</th>
+                        <th>Acción</th>
+                        <th>Tiempo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hunting</strong></td>
+                        <td>Ejecutar query `Anomalous logins`</td>
+                        <td>10 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MITRE ATT&CK</strong></td>
+                        <td>Filtrar alertas por `T1059.001`</td>
+                        <td>5 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Automation</strong></td>
+                        <td>Activar playbook `Block malicious IP`</td>
+                        <td>15 min</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section config">
+            <h2>🔧 Configuraciones Esenciales</h2>
+            <p>1. <strong>Habilitar Entity Behavior</strong>:</p>
+            <div class="code-block">
+Sentinel → Configuración → UEBA → Activar "User Behavior Analytics"
+            </div>
+            
+            <p>2. <strong>Conectar Threat Intelligence</strong>:</p>
+            <div class="code-block">
+Threat Intelligence → Agregar fuente → VirusTotal API
+            </div>
+        </div>
+
+        <div class="section roadmap">
+            <h2>📊 Tablero de Progreso</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Semana</th>
+                        <th>Foco</th>
+                        <th>Funciones Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Fase 1</td>
+                        <td>Hunting, Threat Intelligence</td>
+                    </tr>
+                    <tr>
+                        <td>2-3</td>
+                        <td>Fase 2 y 4</td>
+                        <td>Automation, Notebooks</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Fase 3</td>
+                        <td>MITRE ATT&CK, Entity Behavior</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Fase 5</td>
+                        <td>Workbooks, SOC Optimization</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="signature">
+            <p><a href="https://latitud42.tech">Contactar a Latitud42</a> | arielrogeldev@gmail.com</p>
+        </div>
+
+        <div class="footer">
+            Documento generado por Latitud42 - Fecha: 20 de junio 2025
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose'
+        });
+    </script>
+</body>
+</html>
+```
