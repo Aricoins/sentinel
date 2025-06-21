@@ -1,0 +1,36 @@
+# Requiere: Módulo Az y permisos "Log Analytics Contributor"
+Install-Module -Name Az -Force -Scope CurrentUser
+Connect-AzAccount
+
+# Configuración
+$workspaceName = "NombreDeTuWorkspace"
+$resourceGroup = "NombreDelGrupoDeRecursos"
+$outputFile = "SentinelAudit_$(Get-Date -Format 'yyyyMMdd').csv"
+
+# 1. Verificar conectores de datos
+$connectors = Get-AzSentinelDataConnector -ResourceGroupName $resourceGroup -WorkspaceName $workspaceName
+$connectors | Where-Object { $_.ConnectState -ne "Connected" } | Select-Object Name, ConnectState | Export-Csv -Path $outputFile -Append
+
+# 2. Auditoría de reglas de detección (KQL)
+$query = @"
+SecurityAlert
+| summarize Total=count() by AlertSeverity
+| join kind=leftouter (SecurityAlert | where TimeGenerated > ago(30d) | summarize FalsePositives=count() by AlertSeverity) on AlertSeverity
+"@
+$results = Invoke-AzOperationalInsightsQuery -WorkspaceName $workspaceName -Query $query
+$results.Results | Export-Csv -Path $outputFile -Append
+
+# 3. Chequear playbooks inactivos
+$playbooks = Get-AzLogicApp -ResourceGroupName $resourceGroup
+$playbooks | Where-Object { $_.State -ne "Enabled" } | Select-Object Name, State | Export-Csv -Path $outputFile -Append
+
+# 4. Analizar costos (logs sin uso)
+$costQuery = @"
+Usage
+| where IsBillable == true
+| summarize TotalGB=sum(Quantity) by Solution, DataType
+| where TotalGB > 0 and TotalGB < 1  // Menos de 1GB = posible desperdicio
+"@
+Invoke-AzOperationalInsightsQuery -WorkspaceName $workspaceName -Query $costQuery | Select-Object -Expand Results | Export-Csv -Path $outputFile -Append
+
+Write-Host "✅ Auditoría completada: $outputFile" -ForegroundColor Green
