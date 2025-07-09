@@ -3,548 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNSO - IoT Hardening Program</title>
+    <title>Opportunities for Review - MedStar Health</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .header h1 {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .opportunity-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+        
+        .opportunity-header {
+            background-color: #f8f9fa;
+            padding: 25px 30px 15px 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .header-title {
             font-size: 2.2em;
+            color: #ff4757;
             font-weight: 300;
-            letter-spacing: 1px;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+        
+        .opportunity-subtitle {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        .opportunity-code {
+            color: #ff4757;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .content-section {
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.4em;
+            color: #ff4757;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff4757;
+            padding-bottom: 8px;
+        }
+        
+        .section-content {
+            margin-bottom: 30px;
+        }
+        
+        .highlight-item {
+            margin-bottom: 15px;
+        }
+        
+        .highlight-title {
+            color: #ff4757;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .highlight-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cost-table {
+            background-color: #ff4757;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .cost-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .cost-table th {
+            background-color: rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .cost-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cost-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .total-row {
+            background-color: rgba(0,0,0,0.2);
+            font-weight: 600;
         }
         
         .meta-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            display: flex;
+            gap: 30px;
             margin-bottom: 30px;
             padding: 20px;
-            background-color: #f8f9fa;
+            background-color: #f1f3f4;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
+            flex-wrap: wrap;
         }
         
         .meta-item {
             display: flex;
-            align-items: center;
+            flex-direction: column;
         }
         
         .meta-label {
-            font-weight: 600;
-            color: #555;
-            margin-right: 10px;
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
         }
         
         .meta-value {
-            font-family: 'Courier New', monospace;
-            background-color: #e9ecef;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        
-        .section {
-            margin-bottom: 35px;
-            padding: 25px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e9ecef;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-        
-        .section h3 {
-            color: #555;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        
-        .problem-statement {
-            background-color: #fff5f5;
-            padding: 20px;
-            border-left: 4px solid #e53e3e;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 20px;
-        }
-        
-        .solution-statement {
-            background-color: #f0fff4;
-            padding: 20px;
-            border-left: 4px solid #38a169;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 20px;
-        }
-        
-        .problem-statement h4, .solution-statement h4 {
-            margin-top: 0;
+            font-weight: 600;
             color: #333;
-            font-size: 1.1em;
-        }
-        
-        .problem-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .problem-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .problem-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .solution-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .solution-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .solution-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .icon {
-            margin-right: 10px;
-            font-size: 1.1em;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            letter-spacing: 0.5px;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        tr:hover {
-            background-color: #e3f2fd;
-            transition: background-color 0.3s ease;
-        }
-        
-        .currency {
-            font-weight: 600;
-            color: #28a745;
-        }
-        
-        .code-block {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            margin: 15px 0;
-            overflow-x: auto;
-        }
-        
-        .math-block {
-            background-color: #f0f8ff;
-            border: 1px solid #b0d4f1;
-            border-radius: 8px;
-            padding: 20px;
-            font-family: 'Times New Roman', serif;
-            font-size: 1.1em;
-            margin: 15px 0;
-            text-align: center;
-        }
-        
-        .next-steps {
-            background-color: #fff8e1;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #ff9800;
-        }
-        
-        .next-steps ol {
-            padding-left: 20px;
-        }
-        
-        .next-steps li {
-            margin-bottom: 15px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .highlight-box {
-            background-color: #e8f5e8;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #28a745;
-            margin: 20px 0;
-        }
-        
-        .highlight-box h4 {
-            color: #155724;
-            margin-top: 0;
-        }
-        
-        .highlight-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .highlight-list li {
-            padding: 5px 0;
-            display: flex;
-            align-items: center;
         }
         
         .signature-section {
-            margin-top: 50px;
-            padding: 30px;
             background-color: #f8f9fa;
-            border-radius: 10px;
-            border-top: 3px solid #667eea;
-        }
-        
-        .signature-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .signature-block {
+            padding: 30px;
             text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 1px solid #e9ecef;
         }
         
         .signature-line {
+            display: inline-block;
+            width: 250px;
             border-bottom: 2px solid #333;
-            margin: 20px 0 10px 0;
-            height: 1px;
+            margin: 30px 20px 10px 20px;
         }
         
         .signature-name {
             font-weight: 600;
             color: #333;
-            font-size: 1.1em;
+            margin-top: 10px;
         }
         
         .signature-title {
             color: #666;
             font-size: 0.9em;
-            margin-top: 5px;
         }
         
-        .date-field {
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .date-input {
-            border: none;
-            border-bottom: 2px solid #333;
-            padding: 5px;
-            font-size: 1em;
-            background-color: transparent;
-            text-align: center;
+        .page-break {
+            page-break-before: always;
         }
         
         @media print {
             body {
-                font-size: 12px;
+                background-color: white;
             }
-            .section {
+            
+            .opportunity-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
                 page-break-inside: avoid;
             }
-            .cta-button {
-                display: none;
+            
+            .page-break {
+                page-break-before: always;
             }
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
             .meta-info {
-                grid-template-columns: 1fr;
-            }
-            
-            .signature-info {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
                 flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Discover New Service Opportunity (DNSO)</h1>
-        <p>Medical IoT Device Hardening Program</p>
-    </div>
-    
-    <div class="meta-info">
-        <div class="meta-item">
-            <span class="meta-label">Opportunity Code:</span>
-            <span class="meta-value">us1f15PGGM6-IOT-HARDEN</span>
-        </div>
-        <div class="meta-item">
-            <span class="meta-label">Date:</span>
-            <span class="meta-value">July 09, 2025</span>
-        </div>
-        <div class="meta-item">
-            <span class="meta-label">Owner:</span>
-            <span class="meta-value">Juan Lopez</span>
-        </div>
-        <div class="meta-item">
-            <span class="meta-label">Client:</span>
-            <span class="meta-value">MedStar Health</span>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2>1. Opportunity Overview</h2>
-        
-        <div class="problem-statement">
-            <h4>Problem Statement</h4>
-            <p>MedStar's medical IoT devices (e.g., insulin pumps, PACS workstations) present significant security vulnerabilities:</p>
-            <ul class="problem-list">
-                <li><span class="icon">⚠️</span><strong>Unpatched vulnerabilities:</strong> CVE-2023-24955 identified in 60% of devices per recent security scan</li>
-                <li><span class="icon">🔓</span><strong>Default credentials:</strong> Many devices still using factory settings (admin:password)</li>
-                <li><span class="icon">🌐</span><strong>No network segmentation:</strong> Devices exposed to lateral movement attacks</li>
-            </ul>
-        </div>
-        
-        <div class="solution-statement">
-            <h4>Proposed Solution</h4>
-            <p><strong>On-Premises IoT Hardening Program</strong> featuring:</p>
-            <ul class="solution-list">
-                <li><span class="icon">🔍</span>Automated vulnerability scanning (no cloud dependency required)</li>
-                <li><span class="icon">🛡️</span>Zero-trust network segmentation via VLANs</li>
-                <li><span class="icon">🔧</span>Custom patching solutions for legacy medical devices</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2>2. Why This Matters</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Benefit</th>
-                    <th>Impact</th>
-                    <th>Evidence</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Prevent Ransomware</strong></td>
-                    <td>80% reduction in attack surface</td>
-                    <td>HHS 2023 Healthcare Cyber Report</td>
-                </tr>
-                <tr>
-                    <td><strong>HIPAA Compliance</strong></td>
-                    <td>Avoid fines up to $1.5M/year</td>
-                    <td>OCR Audit Findings 2024</td>
-                </tr>
-                <tr>
-                    <td><strong>Downtime Reduction</strong></td>
-                    <td>50% faster patch deployment</td>
-                    <td>MedStar's 2023 incident logs</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <div class="section">
-        <h2>3. The Ask</h2>
-        <h3>Budget Estimate</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Component</th>
-                    <th>Low (USD)</th>
-                    <th>High (USD)</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>IoT Vulnerability Assessment</td>
-                    <td class="currency">$35,000</td>
-                    <td class="currency">$75,000</td>
-                    <td>Comprehensive scans for 500+ devices</td>
-                </tr>
-                <tr>
-                    <td>Network Segmentation</td>
-                    <td class="currency">$50,000</td>
-                    <td class="currency">$120,000</td>
-                    <td>VLAN implementation + firewall rules</td>
-                </tr>
-                <tr>
-                    <td>Legacy Device Patching</td>
-                    <td class="currency">$25,000</td>
-                    <td class="currency">$60,000</td>
-                    <td>Custom patches for EOL devices</td>
-                </tr>
-                <tr style="background-color: #e8f5e8; font-weight: bold;">
-                    <td><strong>Total Investment</strong></td>
-                    <td class="currency"><strong>$110,000</strong></td>
-                    <td class="currency"><strong>$255,000</strong></td>
-                    <td><strong>Complete solution implementation</strong></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <div class="section">
-        <h2>4. Feasibility Validation</h2>
-        
-        <h3>Technical Proof</h3>
-        <p>Sample vulnerability scan results using industry-standard tools:</p>
-        <div class="code-block">
-# Sample scan results (NMAP + Medigate)
-nmap -sV --script vuln 10.2.1.0/24 | grep "CVE-2023"
-# Output: 23 devices with critical CVEs identified
-        </div>
-        
-        <h3>ROI Calculation</h3>
-        <div class="math-block">
-            <strong>Annual Savings = ($1.5M HIPAA fine risk + $300K downtime costs) ÷ Project Cost = 4.7x ROI</strong>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2>5. Next Steps</h2>
-        <div class="next-steps">
-            <ol>
-                <li>
-                    <strong>Free Pilot Program (2 Weeks):</strong>
-                    <ul>
-                        <li>Scan 50 representative devices</li>
-                        <li>Implement segmentation for 1 VLAN</li>
-                        <li>Deliverables: Risk Heatmap and Remediation Plan</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Compliance Workshop:</strong>
-                    <ul>
-                        <li>Alignment with HIPAA Security Rule §164.308(a)(5)(ii)</li>
-                        <li>NIST Cybersecurity Framework mapping</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-        
-        <div class="cta-buttons">
-            <a href="#" class="cta-button">📥 Download Pilot Proposal</a>
-            <a href="#" class="cta-button">📞 Schedule Scoping Call</a>
-        </div>
-    </div>
-    
-    <div class="highlight-box">
-        <h4>🌟 Why This Will Sell</h4>
-        <ul class="highlight-list">
-            <li><span class="icon">🚨</span><strong>Urgency:</strong> Medical IoT attacks rose 200% year-over-year (CISA)</li>
-            <li><span class="icon">🏢</span><strong>No Cloud Dependency:</strong> Fully on-premises solution</li>
-            <li><span class="icon">📋</span><strong>Regulatory Leverage:</strong> Direct mapping to HIPAA/NIST 800-66 requirements</li>
-        </ul>
-    </div>
-    
-    <div class="signature-section">
-        <h3>Document Approval</h3>
-        <div class="signature-info">
-            <div class="signature-block">
-                <div class="signature-line"></div>
-                <div class="signature-name">Juan Lopez</div>
-                <div class="signature-title">Senior Security Consultant</div>
-                <div class="signature-title">Cybersecurity Solutions</div>
+    <div class="container">
+        <!-- DNSO 1: Seguridad en Dispositivos Médicos IoT -->
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <h1 class="header-title">Opportunities for Review</h1>
+                <div class="opportunity-subtitle">Cybersecurity - Medical IoT Device Hardening</div>
+                <div class="opportunity-code">us1f15PGGM6-IOT-HARDEN</div>
             </div>
-            <div class="signature-block">
-                <div class="signature-line"></div>
-                <div class="signature-name">Client Representative</div>
-                <div class="signature-title">MedStar Health</div>
-                <div class="signature-title">IT Security Department</div>
+            
+            <div class="content-section">
+                <div class="meta-info">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">July 09, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Owner</span>
+                        <span class="meta-value">Juan Lopez</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Client</span>
+                        <span class="meta-value">MedStar Health</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Priority</span>
+                        <span class="meta-value">High</span>
+                    </div>
+                </div>
+                
+                <div class="section-title">Opportunity Overview:</div>
+                <div class="section-content">
+                    <p>MedStar's medical IoT devices (insulin pumps, PACS workstations, monitoring equipment) present critical security vulnerabilities that expose patient data and operational systems to cyber threats. A comprehensive IoT hardening program will address these risks through automated vulnerability management, network segmentation, and compliance alignment.</p>
+                </div>
+                
+                <div class="section-title">Why This Matters:</div>
+                <div class="section-content">
+                    <div class="highlight-item">
+                        <div class="highlight-title">Critical Vulnerability Exposure:</div>
+                        <div class="highlight-description">68% of medical devices contain critical CVEs, with many using default credentials and lacking security patches (CISA 2024).</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-title">HIPAA Compliance Risk:</div>
+                        <div class="highlight-description">Unprotected medical devices violate HIPAA Security Rule requirements, exposing MedStar to fines up to $1.5M per incident.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-title">Operational Continuity:</div>
+                        <div class="highlight-description">Ransomware attacks on medical devices can shut down critical patient care systems, with average downtime costs of $300K per incident.</div>
+                    </div>
+                </div>
+                
+                <div class="section-title">The Ask:</div>
+                <div class="section-content">
+                    <p>Approve and fund a comprehensive medical IoT security hardening program to protect critical healthcare infrastructure, ensure regulatory compliance, and maintain operational resilience across all MedStar facilities.</p>
+                    
+                    <div class="cost-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cost Component</th>
+                                    <th>Estimated Range (USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IoT Vulnerability Assessment & Inventory</td>
+                                    <td>$35K - $75K</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Segmentation & VLAN Implementation</td>
+                                    <td>$50K - $120K</td>
+                                </tr>
+                                <tr>
+                                    <td>Legacy Device Patching & Hardening</td>
+                                    <td>$25K - $60K</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Investment</strong></td>
+                                    <td><strong>$110K - $255K</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="date-field">
-            <label for="date">Date: </label>
-            <input type="text" id="date" class="date-input" value="July 09, 2025" readonly>
+
+        <!-- DNSO 2: Respuesta a Incidentes para Ransomware -->
+        <div class="opportunity-card page-break">
+            <div class="opportunity-header">
+                <h1 class="header-title">Opportunities for Review</h1>
+                <div class="opportunity-subtitle">Cybersecurity - Ransomware Incident Response Program</div>
+                <div class="opportunity-code">us1f15PGGM6-IR-RANSOM</div>
+            </div>
+            
+            <div class="content-section">
+                <div class="meta-info">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">July 09, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Owner</span>
+                        <span class="meta-value">Juan Lopez</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Client</span>
+                        <span class="meta-value">MedStar Health</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Priority</span>
+                        <span class="meta-value">Critical</span>
+                    </div>
+                </div>
+                
+                <div class="section-title">Opportunity Overview:</div>
+                <div class="section-content">
+                    <p>Healthcare organizations face a 200% increase in ransomware attacks, with average recovery costs exceeding $2.4M per incident. MedStar needs a comprehensive incident response program specifically designed for healthcare environments, including rapid containment, data recovery, and business continuity protocols.</p>
+                </div>
+                
+                <div class="section-title">Why This Matters:</div>
+                <div class="section-content">
+                    <div class="highlight-item">
+                        <div class="highlight-title">Healthcare-Targeted Attacks:</div>
+                        <div class="highlight-description">Ransomware groups specifically target hospitals due to their critical nature and willingness to pay. Healthcare experiences 45% more attacks than other sectors.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-title">Patient Safety Impact:</div>
+                        <div class="highlight-description">Ransomware can disable life-support systems, delay procedures, and compromise patient care. Rapid response capabilities are essential for maintaining care continuity.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-title">Regulatory Requirements:</div>
+                        <div class="highlight-description">HIPAA mandates incident response capabilities. Failure to respond appropriately can result in additional regulatory penalties beyond attack costs.</div>
+                    </div>
+                </div>
+                
+                <div class="section-title">The Ask:</div>
+                <div class="section-content">
+                    <p>Establish a dedicated ransomware incident response program with 24/7 emergency response capabilities, automated backup systems, and regular simulation exercises to ensure rapid recovery from ransomware attacks.</p>
+                    
+                    <div class="cost-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cost Component</th>
+                                    <th>Estimated Range (USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Incident Response Plan Development</td>
+                                    <td>$40K - $80K</td>
+                                </tr>
+                                <tr>
+                                    <td>24/7 Emergency Response Capability</td>
+                                    <td>$120K - $200K/year</td>
+                                </tr>
+                                <tr>
+                                    <td>Simulation Exercises & Training</td>
+                                    <td>$30K - $60K</td>
+                                </tr>
+                                <tr>
+                                    <td>Recovery Tools & Technology</td>
+                                    <td>$50K - $100K</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Annual Investment</strong></td>
+                                    <td><strong>$240K - $440K</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DNSO 3: Auditoría de Licencias Microsoft -->
+        <div class="opportunity-card page-break">
+            <div class="opportunity-header">
+                <h1 class="header-title">Opportunities for Review</h1>
+                <div class="opportunity-subtitle">Licensing Optimization - Microsoft Enterprise Agreement Review</div>
+                <div class="opportunity-code">us1f15PGGM6-LIC-MSFT</div>
+            </div>
+            
+            <div class="content-section">
+                <div class="meta-info">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">July 09, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Owner</span>
+                        <span class="meta-value">Juan Lopez</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Client</span>
+                        <span class="meta-value">MedStar Health</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Priority</span>
+                        <span class="meta-value">High</span>
+                    </div>
+                </div>
+                
+                <div class="section-title">Opportunity Overview:</div>
+                <div class="section-content">
+                    <p>MedStar is approaching a Microsoft Enterprise Agreement renewal while operating with licensing inefficiencies across Windows Server, SQL Server, and Office 365 environments. This presents an opportunity to optimize licensing models, reduce costs, and implement strategic technology initiatives while ensuring compliance.</p>
+                </div>
+                
+                <div class="section-title">Why This Matters:</div>
+                <div class="section-content">
+                    <div class="highlight-item">
+                        <div class="highlight-title">Cost Optimization Potential:</div>
+                        <div class="highlight-description">Healthcare organizations typically overspend 20-40% on Microsoft licenses due to poor allocation and unused Enterprise features. Strategic optimization can save $500K+ annually.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-title">Compliance Risk Mitigation:</div>
+                        <div class="highlight-description">Microsoft audits can result in significant penalties. Proactive licensing assessment ensures compliance and positions MedStar favorably for negotiations.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-title">Strategic Technology Enablement:</div>
+                        <div class="highlight-description">Proper licensing optimization unlocks advanced security features, cloud services, and collaboration tools that improve patient care and operational efficiency.</div>
+                    </div>
+                </div>
+                
+                <div class="section-title">The Ask:</div>
+                <div class="section-content">
+                    <p>Support our engagement in MedStar's Microsoft Enterprise Agreement renewal process to deliver comprehensive licensing optimization services that reduce costs, ensure compliance, and create foundation for strategic technology initiatives.</p>
+                    
+                    <div class="cost-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cost Component</th>
+                                    <th>Estimated Range (USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Licensing Assessment & Inventory</td>
+                                    <td>$75K - $150K</td>
+                                </tr>
+                                <tr>
+                                    <td>Optimization Strategy & Modeling</td>
+                                    <td>$100K - $200K</td>
+                                </tr>
+                                <tr>
+                                    <td>Negotiation Support & Advisory</td>
+                                    <td>$50K - $100K</td>
+                                </tr>
+                                <tr>
+                                    <td>Implementation & License Reallocation</td>
+                                    <td>$125K - $250K</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Investment</strong></td>
+                                    <td><strong>$350K - $700K</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Firma -->
+        <div class="signature-section">
+            <h3 style="margin-bottom: 30px; color: #333;">Document Approval & Authorization</h3>
+            <div>
+                <div class="signature-line"></div>
+                <div class="signature-line"></div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 100px; flex-wrap: wrap;">
+                <div>
+                    <div class="signature-name">Juan Lopez</div>
+                    <div class="signature-title">Senior Cybersecurity Consultant</div>
+                    <div class="signature-title">Strategic Solutions</div>
+                </div>
+                <div>
+                    <div class="signature-name">Client Representative</div>
+                    <div class="signature-title">MedStar Health</div>
+                    <div class="signature-title">IT Security & Operations</div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; color: #666;">
+                <strong>Date:</strong> July 09, 2025
+            </div>
         </div>
     </div>
 </body>
