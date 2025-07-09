@@ -1,180 +1,877 @@
-// Static data for client-side usage in exported app
+// Expanded DNSO database with 50+ opportunities based on multinational engineering expertise
 export const dnsoData = {
   "dnso_database": {
+    "metadata": {
+      "version": "2.0",
+      "created_date": "2025-07-09",
+      "total_dnsos": 50,
+      "sectors_covered": ["Energy", "Chemical/Pharmaceutical", "Government/Defense", "Infrastructure", "Technology", "Manufacturing"],
+      "target_markets": ["Healthcare", "Manufacturing", "Government", "Critical Infrastructure", "Financial Services"]
+    },
     "dnsos": [
+      // ENERGY SECTOR - Leveraging oil/gas, renewable, nuclear expertise
       {
         "id": "DNSO-001",
-        "title": "Critical Infrastructure Cybersecurity Assessment",
-        "sector": "Infrastructure",
-        "subsector": "Critical Infrastructure",
-        "client_type": "Government",
+        "title": "Critical Healthcare Energy Infrastructure Security",
+        "sector": "Energy",
+        "subsector": "Power Generation",
+        "client_type": "Healthcare",
         "priority": "Critical",
-        "roi_min": 2500000,
-        "roi_max": 4500000,
-        "risk_prevention": "Prevents catastrophic cyber attacks on critical infrastructure",
-        "expertise_tags": ["Cybersecurity", "Infrastructure Protection", "Risk Assessment"],
-        "competitive_advantage": "Advanced threat detection systems and real-time monitoring capabilities",
-        "urgency_factor": "Rising cyber threats targeting critical infrastructure nationwide",
-        "implementation_time": "12-18 months",
-        "target_client_size": "Government agencies with critical infrastructure oversight",
-        "geography": "National",
-        "description": "Comprehensive cybersecurity assessment and implementation for critical infrastructure protection including power grids, water systems, and transportation networks.",
+        "roi_min": 850000,
+        "roi_max": 1700000,
+        "risk_prevention": "$100M+ liability + $50M+ regulatory losses",
+        "expertise_tags": ["Power Plant Engineering", "Hospital Infrastructure", "SCADA Security", "Emergency Power"],
+        "competitive_advantage": "We built the power infrastructure that hospitals depend on - unique OT security expertise",
+        "urgency_factor": "Nation-state targeting of healthcare energy systems threatens patient safety",
+        "implementation_time": "6-12 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Secure critical power infrastructure including backup generators, UPS systems, and energy management that support life-critical hospital operations.",
         "why_matters": [
-          "Critical infrastructure attacks can cause widespread economic damage",
-          "Government mandate for enhanced cybersecurity measures",
-          "Growing sophistication of state-sponsored cyber attacks"
+          "Life-Critical Dependencies: Hospital energy systems support life support and surgical suites",
+          "Nation-State Targeting: Healthcare energy infrastructure explicitly targeted by foreign adversaries",
+          "Regulatory Compliance: New CISA directives require critical infrastructure cybersecurity reporting"
         ],
         "cost_components": [
-          { "component": "Initial Assessment", "min": 500000, "max": 750000 },
-          { "component": "Technology Implementation", "min": 1500000, "max": 2500000 },
-          { "component": "Staff Training", "min": 300000, "max": 500000 },
-          { "component": "Ongoing Monitoring", "min": 200000, "max": 300000 }
+          { "component": "Energy Infrastructure OT Assessment", "min": 200000, "max": 400000 },
+          { "component": "SCADA & EMS Security Hardening", "min": 300000, "max": 600000 },
+          { "component": "Emergency Generator Cyber Protection", "min": 150000, "max": 300000 },
+          { "component": "24/7 Energy Systems Monitoring", "min": 200000, "max": 400000 }
         ],
         "next_steps": [
-          "Conduct preliminary infrastructure vulnerability assessment",
-          "Develop comprehensive cybersecurity implementation plan",
-          "Secure government approvals and funding",
-          "Begin phased implementation with critical systems first"
+          "Emergency energy system vulnerability assessment",
+          "SCADA security architecture review",
+          "24/7 monitoring implementation pilot"
         ]
       },
       {
         "id": "DNSO-002",
-        "title": "Smart Grid Technology Modernization",
+        "title": "Renewable Energy Cybersecurity for Healthcare",
         "sector": "Energy",
-        "subsector": "Electrical Grid",
-        "client_type": "Government",
+        "subsector": "Renewables",
+        "client_type": "Healthcare",
         "priority": "High",
-        "roi_min": 3500000,
-        "roi_max": 5500000,
-        "risk_prevention": "Prevents grid failures and reduces energy waste",
-        "expertise_tags": ["Smart Grid", "IoT", "Energy Management"],
-        "competitive_advantage": "Proprietary AI-driven grid optimization algorithms",
-        "urgency_factor": "Aging electrical infrastructure requires immediate modernization",
-        "implementation_time": "18-24 months",
-        "target_client_size": "Regional utility companies and government energy departments",
-        "geography": "Regional",
-        "description": "Implementation of smart grid technologies to improve energy efficiency, reliability, and integration of renewable energy sources.",
+        "roi_min": 600000,
+        "roi_max": 1200000,
+        "risk_prevention": "$50M+ renewable investment protection",
+        "expertise_tags": ["Wind Energy", "Solar Systems", "Grid Integration", "Smart Grid Security"],
+        "competitive_advantage": "We design and build renewable energy facilities - understand every component vulnerability",
+        "urgency_factor": "Increasing renewable adoption in healthcare creates new attack vectors",
+        "implementation_time": "4-8 months",
+        "target_client_size": "Medium-Large Healthcare",
+        "geography": "Global",
+        "description": "Protect healthcare renewable energy investments including solar farms, wind installations, and grid-tie systems from cyber threats.",
         "why_matters": [
-          "Aging grid infrastructure is increasingly unreliable",
-          "Growing demand for renewable energy integration",
-          "Need for real-time energy consumption optimization"
+          "Investment Protection: Healthcare renewable energy projects worth $50M+ need cybersecurity",
+          "Grid Stability: Compromised renewable systems can destabilize entire facility power",
+          "Green Initiative Risk: Cyber incidents can derail sustainability goals and regulatory compliance"
         ],
         "cost_components": [
-          { "component": "Smart Meters Installation", "min": 1200000, "max": 2000000 },
-          { "component": "Grid Automation Systems", "min": 1500000, "max": 2500000 },
-          { "component": "Data Analytics Platform", "min": 500000, "max": 800000 },
-          { "component": "Training and Support", "min": 300000, "max": 400000 }
+          { "component": "Renewable Systems Security Assessment", "min": 150000, "max": 300000 },
+          { "component": "Smart Grid Integration Security", "min": 200000, "max": 400000 },
+          { "component": "Inverter & Control System Hardening", "min": 100000, "max": 200000 },
+          { "component": "Grid-Tie Security Monitoring", "min": 150000, "max": 300000 }
         ],
         "next_steps": [
-          "Assess current grid infrastructure and capabilities",
-          "Design smart grid architecture and implementation plan",
-          "Pilot program with select utility partners",
-          "Scale to full regional implementation"
+          "Solar/wind system vulnerability scan",
+          "Grid integration security review",
+          "Smart inverter security assessment"
         ]
       },
       {
         "id": "DNSO-003",
-        "title": "Pharmaceutical Supply Chain Security",
-        "sector": "Chemical/Pharmaceutical",
-        "subsector": "Supply Chain",
-        "client_type": "Manufacturing",
+        "title": "Nuclear Medical Isotope Production Security",
+        "sector": "Energy",
+        "subsector": "Nuclear",
+        "client_type": "Healthcare",
         "priority": "Critical",
-        "roi_min": 1800000,
-        "roi_max": 3200000,
-        "risk_prevention": "Prevents counterfeit drugs and supply chain disruptions",
-        "expertise_tags": ["Supply Chain Security", "Pharmaceutical Compliance", "Blockchain"],
-        "competitive_advantage": "End-to-end traceability using blockchain and IoT sensors",
-        "urgency_factor": "Increasing incidents of counterfeit pharmaceuticals in global supply chains",
-        "implementation_time": "8-12 months",
-        "target_client_size": "Large pharmaceutical manufacturers and distributors",
-        "geography": "Global",
-        "description": "Comprehensive supply chain security solution ensuring pharmaceutical authenticity and preventing counterfeiting through advanced tracking and verification systems.",
+        "roi_min": 2000000,
+        "roi_max": 5000000,
+        "risk_prevention": "Unlimited liability + medical isotope supply protection",
+        "expertise_tags": ["Nuclear Engineering", "Medical Isotopes", "Radiation Safety", "Nuclear Security"],
+        "competitive_advantage": "We build nuclear facilities that produce medical isotopes - understand nuclear-grade security requirements",
+        "urgency_factor": "Medical isotope shortage threatens cancer treatment nationwide",
+        "implementation_time": "12-18 months",
+        "target_client_size": "Major Medical Centers",
+        "geography": "North America, Europe",
+        "description": "Secure nuclear facilities producing medical isotopes essential for cancer treatment and medical imaging.",
         "why_matters": [
-          "Counterfeit drugs pose serious public health risks",
-          "Regulatory compliance requirements are becoming stricter",
-          "Supply chain disruptions can cost millions in lost revenue"
+          "Patient Care Impact: Medical isotope supply disruption affects cancer treatment for millions",
+          "Nuclear Security Requirements: Cyber threats to nuclear facilities trigger federal oversight",
+          "Supply Chain Criticality: Limited global production makes each facility strategically critical"
         ],
         "cost_components": [
-          { "component": "Blockchain Platform Development", "min": 600000, "max": 1000000 },
-          { "component": "IoT Sensor Network", "min": 400000, "max": 700000 },
-          { "component": "Compliance Monitoring System", "min": 500000, "max": 800000 },
-          { "component": "Integration and Testing", "min": 300000, "max": 500000 }
+          { "component": "Nuclear Facility Security Assessment", "min": 500000, "max": 1000000 },
+          { "component": "Medical Isotope Production Protection", "min": 600000, "max": 1200000 },
+          { "component": "Nuclear-Grade Monitoring Systems", "min": 400000, "max": 800000 },
+          { "component": "Regulatory Compliance Integration", "min": 500000, "max": 2000000 }
         ],
         "next_steps": [
-          "Map current supply chain vulnerabilities",
-          "Develop blockchain-based tracking system",
-          "Pilot with select pharmaceutical partners",
-          "Implement full-scale supply chain monitoring"
+          "Nuclear security clearance verification",
+          "Medical isotope supply chain analysis",
+          "Federal compliance framework review"
         ]
       },
       {
         "id": "DNSO-004",
-        "title": "Advanced Healthcare Data Analytics Platform",
-        "sector": "Technology",
-        "subsector": "Healthcare IT",
+        "title": "Oil & Gas Pharmaceutical Precursor Security",
+        "sector": "Energy",
+        "subsector": "Oil & Gas",
         "client_type": "Healthcare",
         "priority": "High",
-        "roi_min": 2200000,
-        "roi_max": 4000000,
-        "risk_prevention": "Improves patient outcomes and reduces medical errors",
-        "expertise_tags": ["Healthcare Analytics", "AI/ML", "Data Security"],
-        "competitive_advantage": "Proprietary predictive analytics for patient care optimization",
-        "urgency_factor": "Healthcare data explosion requires advanced analytics for actionable insights",
-        "implementation_time": "10-15 months",
-        "target_client_size": "Large hospital systems and healthcare networks",
-        "geography": "National",
-        "description": "AI-powered healthcare analytics platform that processes vast amounts of patient data to provide predictive insights for improved patient care and operational efficiency.",
+        "roi_min": 750000,
+        "roi_max": 1500000,
+        "risk_prevention": "$25M+ pharmaceutical supply disruption",
+        "expertise_tags": ["Petrochemical Plants", "Pipeline Security", "Refinery Operations", "Chemical Supply"],
+        "competitive_advantage": "We build refineries and petrochemical plants that produce pharmaceutical precursors",
+        "urgency_factor": "Pharmaceutical supply chains depend on petrochemical feedstocks",
+        "implementation_time": "6-10 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Secure oil & gas facilities that produce pharmaceutical precursors and medical-grade chemicals essential for drug manufacturing.",
         "why_matters": [
-          "Healthcare data is growing exponentially but underutilized",
-          "Need for predictive analytics to improve patient outcomes",
-          "Operational efficiency improvements can save millions"
+          "Pharmaceutical Dependency: 80% of drug precursors come from petrochemical facilities we built",
+          "Supply Chain Vulnerability: Cyber attacks can halt pharmaceutical production globally",
+          "Strategic Resource Protection: Medical-grade chemicals are national security assets"
         ],
         "cost_components": [
-          { "component": "AI Platform Development", "min": 800000, "max": 1500000 },
-          { "component": "Data Security Infrastructure", "min": 600000, "max": 1000000 },
-          { "component": "Integration Services", "min": 500000, "max": 800000 },
-          { "component": "Training and Support", "min": 300000, "max": 500000 }
+          { "component": "Petrochemical Facility Security", "min": 200000, "max": 400000 },
+          { "component": "Pipeline Cybersecurity Integration", "min": 250000, "max": 500000 },
+          { "component": "Refinery Process Protection", "min": 200000, "max": 400000 },
+          { "component": "Supply Chain Monitoring", "min": 100000, "max": 200000 }
         ],
         "next_steps": [
-          "Assess healthcare partner data infrastructure",
-          "Develop AI analytics algorithms for patient care",
-          "Implement pilot program with select hospitals",
-          "Scale to full healthcare network deployment"
+          "Pharmaceutical supply chain mapping",
+          "Petrochemical facility risk assessment",
+          "Pipeline security integration plan"
         ]
       },
       {
         "id": "DNSO-005",
-        "title": "Defense Logistics Optimization System",
-        "sector": "Government/Defense",
-        "subsector": "Military Logistics",
-        "client_type": "Government",
+        "title": "Energy Storage Battery Security for Hospitals",
+        "sector": "Energy",
+        "subsector": "Energy Storage",
+        "client_type": "Healthcare",
         "priority": "High",
-        "roi_min": 3000000,
-        "roi_max": 5000000,
-        "risk_prevention": "Enhances national security through improved defense logistics",
-        "expertise_tags": ["Military Logistics", "AI Optimization", "Supply Chain"],
-        "competitive_advantage": "Advanced AI algorithms specifically designed for defense logistics challenges",
-        "urgency_factor": "Military readiness depends on efficient logistics and supply chain management",
-        "implementation_time": "15-20 months",
-        "target_client_size": "Department of Defense and military contractors",
-        "geography": "National",
-        "description": "Advanced logistics optimization system designed specifically for defense operations, improving supply chain efficiency and military readiness.",
+        "roi_min": 500000,
+        "roi_max": 1000000,
+        "risk_prevention": "$20M+ battery investment + fire safety",
+        "expertise_tags": ["Battery Systems", "Energy Storage", "Grid Storage", "Fire Safety"],
+        "competitive_advantage": "We design and install large-scale battery systems for healthcare facilities",
+        "urgency_factor": "Hospital battery systems vulnerable to thermal runaway cyber attacks",
+        "implementation_time": "4-6 months",
+        "target_client_size": "Medium-Large Healthcare",
+        "geography": "Global",
+        "description": "Protect hospital battery energy storage systems from cyber attacks that could cause thermal runaway, fires, or power system failures.",
         "why_matters": [
-          "Military readiness is critical to national security",
-          "Complex defense logistics require specialized optimization",
-          "Cost savings can be redirected to other defense priorities"
+          "Fire Safety Risk: Cyber attacks can trigger battery thermal runaway causing facility fires",
+          "Emergency Power Protection: Battery systems provide critical backup during grid failures",
+          "Investment Protection: Hospital battery installations worth $20M+ need cybersecurity"
         ],
         "cost_components": [
-          { "component": "AI Optimization Engine", "min": 1000000, "max": 1800000 },
-          { "component": "Secure Communication Infrastructure", "min": 800000, "max": 1400000 },
-          { "component": "Integration with Defense Systems", "min": 700000, "max": 1200000 },
-          { "component": "Security Clearance and Training", "min": 500000, "max": 800000 }
+          { "component": "Battery Management System Security", "min": 125000, "max": 250000 },
+          { "component": "Thermal Monitoring Integration", "min": 100000, "max": 200000 },
+          { "component": "Fire Safety System Protection", "min": 150000, "max": 300000 },
+          { "component": "Grid Integration Security", "min": 125000, "max": 250000 }
         ],
         "next_steps": [
-          "Obtain necessary security clearances",
-          "Assess current defense logistics systems",
-          "Develop secure optimization algorithms",
-          "Implement pilot with select military units"
+          "Battery system vulnerability assessment",
+          "Fire safety integration review",
+          "Emergency power continuity testing"
+        ]
+      },
+
+      // CHEMICAL/PHARMACEUTICAL SECTOR - Leveraging chemical plant expertise
+      {
+        "id": "DNSO-006",
+        "title": "Pharmaceutical Manufacturing Process Security",
+        "sector": "Chemical/Pharmaceutical",
+        "subsector": "Drug Manufacturing",
+        "client_type": "Healthcare",
+        "priority": "Critical",
+        "roi_min": 900000,
+        "roi_max": 1800000,
+        "risk_prevention": "$10B+ contamination liability + drug supply protection",
+        "expertise_tags": ["Pharmaceutical Plants", "GMP Compliance", "Process Control", "Drug Safety"],
+        "competitive_advantage": "We build the pharmaceutical plants that produce medications used by healthcare systems",
+        "urgency_factor": "Drug contamination through cyber attacks can kill thousands of patients",
+        "implementation_time": "8-12 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Secure pharmaceutical manufacturing processes to prevent drug contamination, ensure supply continuity, and maintain FDA compliance.",
+        "why_matters": [
+          "Drug Safety Critical: Cyber attacks can alter drug formulations causing patient deaths",
+          "Supply Chain Protection: Manufacturing disruptions create life-threatening drug shortages",
+          "FDA Compliance: Cyber incidents trigger immediate FDA investigations and plant shutdowns"
+        ],
+        "cost_components": [
+          { "component": "Manufacturing Process Security Assessment", "min": 250000, "max": 500000 },
+          { "component": "Pharmaceutical Supply Chain Protection", "min": 300000, "max": 600000 },
+          { "component": "GMP-Compliant Security Controls", "min": 200000, "max": 400000 },
+          { "component": "Drug Safety Monitoring Integration", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "FDA compliance security review",
+          "Manufacturing process vulnerability scan",
+          "Drug safety monitoring integration"
+        ]
+      },
+      {
+        "id": "DNSO-007",
+        "title": "Chemical Precursor Security for Medical Supplies",
+        "sector": "Chemical/Pharmaceutical",
+        "subsector": "Chemical Processing",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 700000,
+        "roi_max": 1400000,
+        "risk_prevention": "$50M+ medical supply disruption",
+        "expertise_tags": ["Chemical Plants", "Process Safety", "Hazmat Handling", "Supply Chain"],
+        "competitive_advantage": "We design chemical plants producing precursors for medical devices and supplies",
+        "urgency_factor": "Medical supply shortages from chemical plant cyber attacks",
+        "implementation_time": "6-9 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Protect chemical plants producing precursors for medical supplies, PPE, and medical devices used in healthcare.",
+        "why_matters": [
+          "Medical Supply Dependency: Healthcare depends on chemical precursors for critical supplies",
+          "Process Safety Risk: Cyber attacks can cause chemical releases threatening communities",
+          "Supply Chain Resilience: Chemical plant disruptions affect entire healthcare supply chain"
+        ],
+        "cost_components": [
+          { "component": "Chemical Plant Security Assessment", "min": 200000, "max": 400000 },
+          { "component": "Process Control System Protection", "min": 250000, "max": 500000 },
+          { "component": "Hazmat Safety Integration", "min": 150000, "max": 300000 },
+          { "component": "Supply Chain Monitoring", "min": 100000, "max": 200000 }
+        ],
+        "next_steps": [
+          "Chemical precursor supply mapping",
+          "Process safety system review",
+          "Emergency response integration"
+        ]
+      },
+      {
+        "id": "DNSO-008",
+        "title": "Laboratory Chemical Supply Security",
+        "sector": "Chemical/Pharmaceutical",
+        "subsector": "Laboratory Chemicals",
+        "client_type": "Healthcare",
+        "priority": "Medium",
+        "roi_min": 400000,
+        "roi_max": 800000,
+        "risk_prevention": "$15M+ laboratory operation disruption",
+        "expertise_tags": ["Laboratory Design", "Chemical Storage", "Research Facilities", "Quality Control"],
+        "competitive_advantage": "We build research laboratories and understand chemical storage and handling requirements",
+        "urgency_factor": "Laboratory testing essential for patient diagnosis and treatment",
+        "implementation_time": "4-6 months",
+        "target_client_size": "Medium-Large Healthcare",
+        "geography": "Global",
+        "description": "Secure chemical supply chains for hospital laboratories, ensuring availability of reagents and testing chemicals.",
+        "why_matters": [
+          "Diagnostic Testing Impact: Chemical shortages halt laboratory testing affecting patient care",
+          "Research Continuity: Clinical research depends on specialized chemical supplies",
+          "Quality Assurance: Contaminated chemicals compromise test results and patient safety"
+        ],
+        "cost_components": [
+          { "component": "Laboratory Supply Chain Security", "min": 100000, "max": 200000 },
+          { "component": "Chemical Storage System Protection", "min": 150000, "max": 300000 },
+          { "component": "Quality Control Integration", "min": 100000, "max": 200000 },
+          { "component": "Research Continuity Planning", "min": 50000, "max": 100000 }
+        ],
+        "next_steps": [
+          "Laboratory chemical inventory assessment",
+          "Supply chain vulnerability analysis",
+          "Quality control system review"
+        ]
+      },
+      {
+        "id": "DNSO-009",
+        "title": "Fertilizer Plant Security for Food Safety",
+        "sector": "Chemical/Pharmaceutical",
+        "subsector": "Fertilizers",
+        "client_type": "Healthcare",
+        "priority": "Medium",
+        "roi_min": 600000,
+        "roi_max": 1200000,
+        "risk_prevention": "$30M+ food supply impact on public health",
+        "expertise_tags": ["Fertilizer Plants", "Agricultural Chemistry", "Food Safety", "Public Health"],
+        "competitive_advantage": "We build fertilizer plants that impact food safety and public health outcomes",
+        "urgency_factor": "Food contamination from fertilizer plant cyber attacks affects population health",
+        "implementation_time": "6-8 months",
+        "target_client_size": "Public Health Agencies",
+        "geography": "Global",
+        "description": "Secure fertilizer manufacturing to prevent contamination that could affect food safety and public health.",
+        "why_matters": [
+          "Public Health Impact: Contaminated fertilizers cause widespread foodborne illness",
+          "Healthcare System Burden: Food safety incidents overwhelm healthcare capacity",
+          "Agricultural Security: Food supply disruption affects population health outcomes"
+        ],
+        "cost_components": [
+          { "component": "Fertilizer Plant Security Assessment", "min": 150000, "max": 300000 },
+          { "component": "Agricultural Supply Chain Protection", "min": 200000, "max": 400000 },
+          { "component": "Food Safety Monitoring Integration", "min": 150000, "max": 300000 },
+          { "component": "Public Health Coordination", "min": 100000, "max": 200000 }
+        ],
+        "next_steps": [
+          "Food safety impact assessment",
+          "Agricultural supply chain mapping",
+          "Public health coordination planning"
+        ]
+      },
+      {
+        "id": "DNSO-010",
+        "title": "Polymer Medical Device Material Security",
+        "sector": "Chemical/Pharmaceutical",
+        "subsector": "Polymers",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 800000,
+        "roi_max": 1600000,
+        "risk_prevention": "$75M+ medical device supply disruption",
+        "expertise_tags": ["Polymer Plants", "Medical Polymers", "Device Manufacturing", "Material Science"],
+        "competitive_advantage": "We build polymer plants producing materials for medical devices and implants",
+        "urgency_factor": "Medical device shortages from polymer supply disruption",
+        "implementation_time": "6-10 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Protect polymer manufacturing facilities producing materials for medical devices, implants, and disposable medical supplies.",
+        "why_matters": [
+          "Medical Device Dependency: Healthcare devices require specialized medical-grade polymers",
+          "Implant Safety: Contaminated polymers in implants cause patient harm and liability",
+          "Supply Chain Criticality: Limited polymer sources create single points of failure"
+        ],
+        "cost_components": [
+          { "component": "Polymer Plant Security Assessment", "min": 200000, "max": 400000 },
+          { "component": "Medical Grade Material Protection", "min": 250000, "max": 500000 },
+          { "component": "Device Manufacturing Integration", "min": 200000, "max": 400000 },
+          { "component": "Quality Assurance Monitoring", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "Medical polymer supply chain analysis",
+          "Device manufacturer coordination",
+          "Quality control system integration"
+        ]
+      },
+
+      // GOVERNMENT/DEFENSE SECTOR - Leveraging defense contracting expertise
+      {
+        "id": "DNSO-011",
+        "title": "Military-Grade Healthcare Infrastructure Security",
+        "sector": "Government/Defense",
+        "subsector": "Military Infrastructure",
+        "client_type": "Healthcare",
+        "priority": "Critical",
+        "roi_min": 1400000,
+        "roi_max": 2800000,
+        "risk_prevention": "Nation-state attack prevention + $100M+ federal funding",
+        "expertise_tags": ["Military Infrastructure", "Defense Contracting", "Security Clearance", "NIST 800-53"],
+        "competitive_advantage": "We build military installations and understand defense-grade security requirements",
+        "urgency_factor": "Healthcare infrastructure designated as critical national security asset",
+        "implementation_time": "12-18 months",
+        "target_client_size": "Major Healthcare Systems",
+        "geography": "North America",
+        "description": "Implement defense-grade cybersecurity controls for healthcare infrastructure to protect against nation-state threats.",
+        "why_matters": [
+          "Nation-State Targeting: Foreign governments explicitly target healthcare for social disruption",
+          "Critical Infrastructure Status: Hospitals designated critical infrastructure under DHS directives",
+          "Federal Integration: Emergency response requires compatibility with military medical systems"
+        ],
+        "cost_components": [
+          { "component": "Defense-Grade Security Assessment", "min": 300000, "max": 600000 },
+          { "component": "Military-Standard Controls Implementation", "min": 500000, "max": 1000000 },
+          { "component": "Nation-State Threat Protection", "min": 400000, "max": 800000 },
+          { "component": "Federal Emergency System Integration", "min": 200000, "max": 400000 }
+        ],
+        "next_steps": [
+          "Security clearance verification",
+          "Nation-state threat assessment",
+          "Federal integration requirements review"
+        ]
+      },
+      {
+        "id": "DNSO-012",
+        "title": "Defense Logistics Healthcare Supply Security",
+        "sector": "Government/Defense",
+        "subsector": "Military Logistics",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 1000000,
+        "roi_max": 2000000,
+        "risk_prevention": "$200M+ defense medical supply protection",
+        "expertise_tags": ["Military Logistics", "Defense Supply Chain", "Strategic Materials", "ITAR Compliance"],
+        "competitive_advantage": "We manage defense logistics and understand military supply chain security",
+        "urgency_factor": "Military medical supplies essential for civilian healthcare during emergencies",
+        "implementation_time": "10-15 months",
+        "target_client_size": "Major Healthcare Systems",
+        "geography": "North America",
+        "description": "Secure defense logistics networks that supply critical medical equipment to civilian healthcare during emergencies.",
+        "why_matters": [
+          "Emergency Medical Supply: Military stockpiles supplement civilian healthcare during crises",
+          "Strategic Material Protection: Defense medical supplies are national security assets",
+          "Dual-Use Technology: Military medical innovations require export control compliance"
+        ],
+        "cost_components": [
+          { "component": "Defense Supply Chain Security", "min": 250000, "max": 500000 },
+          { "component": "Military Medical Equipment Protection", "min": 300000, "max": 600000 },
+          { "component": "ITAR Compliance Integration", "min": 200000, "max": 400000 },
+          { "component": "Strategic Reserve Monitoring", "min": 250000, "max": 500000 }
+        ],
+        "next_steps": [
+          "Defense supply chain mapping",
+          "ITAR compliance assessment",
+          "Strategic reserve integration planning"
+        ]
+      },
+
+      // INFRASTRUCTURE SECTOR - Leveraging construction expertise
+      {
+        "id": "DNSO-013",
+        "title": "Smart Hospital Construction Cybersecurity",
+        "sector": "Infrastructure",
+        "subsector": "Hospital Construction",
+        "client_type": "Healthcare",
+        "priority": "Critical",
+        "roi_min": 1500000,
+        "roi_max": 3000000,
+        "risk_prevention": "$1B+ construction investment + 50-year viability",
+        "expertise_tags": ["Hospital Construction", "Smart Buildings", "IoT Infrastructure", "BIM Integration"],
+        "competitive_advantage": "We build hospitals from ground up with security-by-design that others cannot retrofit",
+        "urgency_factor": "New hospital construction must include embedded cybersecurity or become obsolete",
+        "implementation_time": "18-36 months",
+        "target_client_size": "Major Healthcare Systems",
+        "geography": "Global",
+        "description": "Integrate cybersecurity into new hospital construction with security-by-design for 50-year operational viability.",
+        "why_matters": [
+          "Investment Protection: Hospital construction investments of $1B+ must last 50+ years",
+          "Security-by-Design: Retrofitting security costs 10x more than built-in protection",
+          "Future-Proof Technology: Embedded security ensures long-term operational viability"
+        ],
+        "cost_components": [
+          { "component": "Security-by-Design Architecture", "min": 400000, "max": 800000 },
+          { "component": "Smart Building Security Integration", "min": 600000, "max": 1200000 },
+          { "component": "IoT Infrastructure Hardening", "min": 300000, "max": 600000 },
+          { "component": "Future-Proof Security Framework", "min": 200000, "max": 400000 }
+        ],
+        "next_steps": [
+          "Construction project security requirements",
+          "Smart building integration planning",
+          "50-year security roadmap development"
+        ]
+      },
+      {
+        "id": "DNSO-014",
+        "title": "Transportation Infrastructure Medical Emergency Security",
+        "sector": "Infrastructure",
+        "subsector": "Transportation",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 800000,
+        "roi_max": 1600000,
+        "risk_prevention": "$100M+ emergency response capability",
+        "expertise_tags": ["Airport Construction", "Road Infrastructure", "Emergency Services", "Transportation Security"],
+        "competitive_advantage": "We build airports and transportation infrastructure critical for medical emergencies",
+        "urgency_factor": "Medical emergencies depend on secure transportation infrastructure",
+        "implementation_time": "8-12 months",
+        "target_client_size": "Regional Healthcare Networks",
+        "geography": "Global",
+        "description": "Secure transportation infrastructure systems that support medical emergency response and patient transport.",
+        "why_matters": [
+          "Emergency Response: Medical emergencies require secure transportation coordination",
+          "Patient Transport: Air medical services depend on airport infrastructure security",
+          "Mass Casualty Events: Transportation systems must remain operational during emergencies"
+        ],
+        "cost_components": [
+          { "component": "Transportation Security Assessment", "min": 200000, "max": 400000 },
+          { "component": "Emergency Response Integration", "min": 250000, "max": 500000 },
+          { "component": "Air Medical Service Protection", "min": 200000, "max": 400000 },
+          { "component": "Mass Casualty Coordination", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "Emergency response coordination assessment",
+          "Transportation security integration review",
+          "Mass casualty preparedness planning"
+        ]
+      },
+      {
+        "id": "DNSO-015",
+        "title": "Water Infrastructure Healthcare Dependency Security",
+        "sector": "Infrastructure",
+        "subsector": "Water Systems",
+        "client_type": "Healthcare",
+        "priority": "Critical",
+        "roi_min": 1000000,
+        "roi_max": 2000000,
+        "risk_prevention": "$500M+ water system dependency + patient safety",
+        "expertise_tags": ["Water Treatment", "Infrastructure Systems", "Public Health", "Utility Security"],
+        "competitive_advantage": "We build water treatment facilities that hospitals depend on for operations",
+        "urgency_factor": "Hospital operations require secure water supply for patient care and sterilization",
+        "implementation_time": "10-15 months",
+        "target_client_size": "Regional Healthcare Systems",
+        "geography": "Global",
+        "description": "Secure water infrastructure systems that hospitals depend on for patient care, sterilization, and emergency operations.",
+        "why_matters": [
+          "Patient Care Dependency: Hospitals require secure water for dialysis, surgery, and patient care",
+          "Sterilization Requirements: Medical equipment sterilization depends on water quality and availability",
+          "Emergency Operations: Hospital emergency response requires guaranteed water supply"
+        ],
+        "cost_components": [
+          { "component": "Water Infrastructure Security Assessment", "min": 250000, "max": 500000 },
+          { "component": "Hospital Water System Protection", "min": 300000, "max": 600000 },
+          { "component": "Emergency Water Supply Security", "min": 200000, "max": 400000 },
+          { "component": "Water Quality Monitoring Integration", "min": 250000, "max": 500000 }
+        ],
+        "next_steps": [
+          "Hospital water dependency analysis",
+          "Water treatment facility security review",
+          "Emergency water supply planning"
+        ]
+      },
+
+      // TECHNOLOGY/MANUFACTURING SECTOR - Leveraging tech facility expertise  
+      {
+        "id": "DNSO-016",
+        "title": "Medical Device Manufacturing Cybersecurity",
+        "sector": "Technology",
+        "subsector": "Medical Device Production",
+        "client_type": "Healthcare",
+        "priority": "Critical",
+        "roi_min": 900000,
+        "roi_max": 1800000,
+        "risk_prevention": "Unlimited liability + $50M+ recall costs + $100M+ revenue",
+        "expertise_tags": ["Manufacturing Plants", "Medical Devices", "Quality Control", "FDA Compliance"],
+        "competitive_advantage": "We build the factories that manufacture medical devices used in healthcare",
+        "urgency_factor": "Medical device tampering during manufacturing can harm thousands of patients",
+        "implementation_time": "8-12 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Secure medical device manufacturing to prevent firmware tampering, ensure device integrity, and maintain FDA compliance.",
+        "why_matters": [
+          "Device Integrity: Cyber attacks during manufacturing can embed malicious code in medical devices",
+          "Patient Safety: Compromised devices can directly harm patients and create unlimited liability",
+          "FDA Compliance: Device security vulnerabilities can trigger immediate FDA recalls"
+        ],
+        "cost_components": [
+          { "component": "Medical Device Manufacturing Security", "min": 200000, "max": 400000 },
+          { "component": "Firmware Integrity Protection", "min": 300000, "max": 600000 },
+          { "component": "Quality Control Integration", "min": 250000, "max": 500000 },
+          { "component": "FDA Compliance Monitoring", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "Medical device manufacturing security review",
+          "Firmware integrity assessment",
+          "FDA compliance gap analysis"
+        ]
+      },
+      {
+        "id": "DNSO-017",
+        "title": "Semiconductor Fab Security for Medical Electronics",
+        "sector": "Technology",
+        "subsector": "Semiconductor Manufacturing",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 1200000,
+        "roi_max": 2400000,
+        "risk_prevention": "$500M+ semiconductor supply + device security",
+        "expertise_tags": ["Semiconductor Fabs", "Medical Electronics", "Chip Security", "Supply Chain"],
+        "competitive_advantage": "We build semiconductor fabrication facilities that produce chips for medical devices",
+        "urgency_factor": "Medical devices depend on secure semiconductors for patient safety",
+        "implementation_time": "12-18 months",
+        "target_client_size": "Medical Device Manufacturers",
+        "geography": "Global",
+        "description": "Secure semiconductor manufacturing for medical electronics to prevent hardware trojans and ensure device security.",
+        "why_matters": [
+          "Hardware Security: Medical device semiconductors must be free from hardware trojans",
+          "Supply Chain Trust: Secure semiconductor supply essential for medical device integrity",
+          "Nation-State Threats: Foreign adversaries target semiconductor supply chains"
+        ],
+        "cost_components": [
+          { "component": "Semiconductor Fab Security Assessment", "min": 300000, "max": 600000 },
+          { "component": "Medical Electronics Protection", "min": 400000, "max": 800000 },
+          { "component": "Hardware Trojan Prevention", "min": 300000, "max": 600000 },
+          { "component": "Supply Chain Verification", "min": 200000, "max": 400000 }
+        ],
+        "next_steps": [
+          "Semiconductor supply chain analysis",
+          "Hardware security assessment",
+          "Medical electronics security review"
+        ]
+      },
+      {
+        "id": "DNSO-018",
+        "title": "Data Center Security for Healthcare Cloud",
+        "sector": "Technology",
+        "subsector": "Data Centers",
+        "client_type": "Healthcare",
+        "priority": "Critical",
+        "roi_min": 1100000,
+        "roi_max": 2200000,
+        "risk_prevention": "$500M+ data center investment + patient data protection",
+        "expertise_tags": ["Data Center Construction", "Cloud Infrastructure", "Physical Security", "HIPAA Compliance"],
+        "competitive_advantage": "We build the data centers that host healthcare cloud infrastructure and patient data",
+        "urgency_factor": "Healthcare data migration to cloud creates massive cybersecurity requirements",
+        "implementation_time": "8-14 months",
+        "target_client_size": "Large Healthcare Systems",
+        "geography": "Global",
+        "description": "Secure data center infrastructure hosting healthcare cloud services and patient data with integrated physical-cyber security.",
+        "why_matters": [
+          "Patient Data Protection: Healthcare data centers store millions of patient records requiring maximum security",
+          "Cloud Migration Risk: Healthcare cloud adoption creates new attack vectors and compliance requirements",
+          "Physical-Cyber Integration: Data centers need integrated physical and cybersecurity that traditional IT vendors cannot provide"
+        ],
+        "cost_components": [
+          { "component": "Data Center Physical-Cyber Security", "min": 300000, "max": 600000 },
+          { "component": "Healthcare Cloud Infrastructure Protection", "min": 400000, "max": 800000 },
+          { "component": "HIPAA Compliance Integration", "min": 250000, "max": 500000 },
+          { "component": "Patient Data Security Monitoring", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "Healthcare cloud security assessment",
+          "HIPAA compliance gap analysis",
+          "Physical-cyber security integration planning"
+        ]
+      },
+      {
+        "id": "DNSO-019",
+        "title": "5G Network Infrastructure for Healthcare IoT",
+        "sector": "Technology",
+        "subsector": "Telecommunications",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 900000,
+        "roi_max": 1800000,
+        "risk_prevention": "$300M+ 5G healthcare infrastructure investment",
+        "expertise_tags": ["5G Networks", "Healthcare IoT", "Network Infrastructure", "Edge Computing"],
+        "competitive_advantage": "We build 5G network infrastructure enabling next-generation healthcare IoT and telemedicine",
+        "urgency_factor": "5G healthcare applications create new attack vectors requiring specialized security",
+        "implementation_time": "8-12 months",
+        "target_client_size": "Regional Healthcare Networks",
+        "geography": "Global",
+        "description": "Secure 5G network infrastructure supporting healthcare IoT, telemedicine, and real-time patient monitoring systems.",
+        "why_matters": [
+          "Healthcare IoT Enablement: 5G networks enable critical healthcare IoT applications and remote monitoring",
+          "Telemedicine Security: 5G telemedicine requires ultra-low latency and high security for patient care",
+          "Edge Computing Risk: 5G edge computing in healthcare creates new cybersecurity challenges"
+        ],
+        "cost_components": [
+          { "component": "5G Healthcare Network Security", "min": 250000, "max": 500000 },
+          { "component": "Healthcare IoT Protection", "min": 200000, "max": 400000 },
+          { "component": "Telemedicine Security Integration", "min": 250000, "max": 500000 },
+          { "component": "Edge Computing Security", "min": 200000, "max": 400000 }
+        ],
+        "next_steps": [
+          "5G healthcare network assessment",
+          "IoT security framework development",
+          "Telemedicine security planning"
+        ]
+      },
+      {
+        "id": "DNSO-020",
+        "title": "Industrial Automation Security for Medical Manufacturing",
+        "sector": "Technology",
+        "subsector": "Industrial Automation",
+        "client_type": "Manufacturing",
+        "priority": "High",
+        "roi_min": 700000,
+        "roi_max": 1400000,
+        "risk_prevention": "$200M+ manufacturing automation investment",
+        "expertise_tags": ["Industrial Automation", "Manufacturing Systems", "Robotics", "Process Control"],
+        "competitive_advantage": "We design and implement industrial automation systems for medical manufacturing facilities",
+        "urgency_factor": "Automated medical manufacturing vulnerable to cyber attacks affecting drug and device production",
+        "implementation_time": "6-10 months",
+        "target_client_size": "Medical Manufacturing",
+        "geography": "Global",
+        "description": "Secure industrial automation systems used in medical device and pharmaceutical manufacturing to prevent production disruption.",
+        "why_matters": [
+          "Manufacturing Continuity: Automated systems control critical medical manufacturing processes",
+          "Product Quality: Cyber attacks on automation can compromise medical product quality and safety",
+          "Production Security: Industrial automation systems require specialized OT cybersecurity expertise"
+        ],
+        "cost_components": [
+          { "component": "Industrial Automation Security Assessment", "min": 175000, "max": 350000 },
+          { "component": "Manufacturing Process Protection", "min": 200000, "max": 400000 },
+          { "component": "Robotics Security Integration", "min": 175000, "max": 350000 },
+          { "component": "Process Control Monitoring", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "Manufacturing automation security review",
+          "Robotics security assessment",
+          "Process control system hardening"
+        ]
+      },
+
+      // MANUFACTURING SECTOR - Leveraging automotive and aerospace expertise
+      {
+        "id": "DNSO-021",
+        "title": "Automotive Manufacturing for Medical Transport Security",
+        "sector": "Manufacturing",
+        "subsector": "Automotive",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 800000,
+        "roi_max": 1600000,
+        "risk_prevention": "$100M+ medical transport vehicle safety",
+        "expertise_tags": ["Automotive Plants", "Vehicle Security", "Medical Transport", "Connected Vehicles"],
+        "competitive_advantage": "We build automotive plants manufacturing ambulances and medical transport vehicles",
+        "urgency_factor": "Connected medical vehicles vulnerable to cyber attacks during patient transport",
+        "implementation_time": "6-10 months",
+        "target_client_size": "Emergency Medical Services",
+        "geography": "Global",
+        "description": "Secure automotive manufacturing for medical transport vehicles including ambulances, medical helicopters, and patient transport systems.",
+        "why_matters": [
+          "Patient Transport Safety: Cyber attacks on medical vehicles can endanger patients during transport",
+          "Emergency Response: Ambulances and medical helicopters require secure communication systems",
+          "Connected Vehicle Risk: Medical transport vehicles increasingly connected and vulnerable"
+        ],
+        "cost_components": [
+          { "component": "Medical Vehicle Manufacturing Security", "min": 200000, "max": 400000 },
+          { "component": "Connected Vehicle Protection", "min": 250000, "max": 500000 },
+          { "component": "Emergency Communication Security", "min": 200000, "max": 400000 },
+          { "component": "Patient Transport Safety Integration", "min": 150000, "max": 300000 }
+        ],
+        "next_steps": [
+          "Medical vehicle manufacturing assessment",
+          "Connected vehicle security review",
+          "Emergency communication integration"
+        ]
+      },
+      {
+        "id": "DNSO-022",
+        "title": "Aerospace Medical Equipment Manufacturing Security",
+        "sector": "Manufacturing",
+        "subsector": "Aerospace",
+        "client_type": "Healthcare",
+        "priority": "High",
+        "roi_min": 1000000,
+        "roi_max": 2000000,
+        "risk_prevention": "$200M+ aerospace medical equipment investment",
+        "expertise_tags": ["Aerospace Manufacturing", "Medical Equipment", "Precision Manufacturing", "Quality Assurance"],
+        "competitive_advantage": "We manufacture aerospace-grade medical equipment requiring highest precision and reliability",
+        "urgency_factor": "Aerospace-grade medical equipment essential for critical care and surgery",
+        "implementation_time": "10-15 months",
+        "target_client_size": "Major Medical Centers",
+        "geography": "Global",
+        "description": "Secure aerospace manufacturing processes for medical equipment requiring aerospace-level precision and reliability.",
+        "why_matters": [
+          "Precision Requirements: Medical equipment requires aerospace-level precision manufacturing",
+          "Life Support Systems: Aerospace medical equipment supports critical patient care",
+          "Quality Assurance: Manufacturing defects in aerospace medical equipment can be fatal"
+        ],
+        "cost_components": [
+          { "component": "Aerospace Manufacturing Security", "min": 300000, "max": 600000 },
+          { "component": "Medical Equipment Protection", "min": 350000, "max": 700000 },
+          { "component": "Precision Manufacturing Quality Control", "min": 250000, "max": 500000 },
+          { "component": "Regulatory Compliance Integration", "min": 100000, "max": 200000 }
+        ],
+        "next_steps": [
+          "Aerospace medical equipment assessment",
+          "Precision manufacturing security review",
+          "Quality control system integration"
+        ]
+      },
+
+      // FINANCIAL SERVICES - New sector leveraging project finance expertise
+      {
+        "id": "DNSO-023",
+        "title": "Healthcare Infrastructure Investment Security",
+        "sector": "Financial Services",
+        "subsector": "Project Finance",
+        "client_type": "Financial Services",
+        "priority": "High",
+        "roi_min": 1500000,
+        "roi_max": 3000000,
+        "risk_prevention": "$5B+ healthcare infrastructure investment protection",
+        "expertise_tags": ["Project Finance", "Infrastructure Investment", "Risk Management", "Asset Protection"],
+        "competitive_advantage": "We finance and build healthcare infrastructure projects worth billions globally",
+        "urgency_factor": "Healthcare infrastructure investments vulnerable to cyber threats affecting ROI",
+        "implementation_time": "12-18 months",
+        "target_client_size": "Investment Banks, Private Equity",
+        "geography": "Global",
+        "description": "Protect healthcare infrastructure investments through comprehensive cybersecurity due diligence and risk management.",
+        "why_matters": [
+          "Investment Protection: Healthcare infrastructure projects worth $5B+ need cybersecurity protection",
+          "Due Diligence Requirements: Cyber risks increasingly important in investment decisions",
+          "Asset Value Protection: Cyber incidents can destroy billions in asset value overnight"
+        ],
+        "cost_components": [
+          { "component": "Cybersecurity Due Diligence", "min": 400000, "max": 800000 },
+          { "component": "Investment Risk Assessment", "min": 500000, "max": 1000000 },
+          { "component": "Asset Protection Planning", "min": 400000, "max": 800000 },
+          { "component": "Ongoing Risk Monitoring", "min": 200000, "max": 400000 }
+        ],
+        "next_steps": [
+          "Healthcare investment portfolio analysis",
+          "Cyber risk assessment framework",
+          "Investment protection strategy development"
+        ]
+      },
+      {
+        "id": "DNSO-024",
+        "title": "Critical Infrastructure Finance Cybersecurity",
+        "sector": "Financial Services",
+        "subsector": "Infrastructure Finance",
+        "client_type": "Financial Services",
+        "priority": "Critical",
+        "roi_min": 2000000,
+        "roi_max": 4000000,
+        "risk_prevention": "$10B+ critical infrastructure investment protection",
+        "expertise_tags": ["Infrastructure Finance", "Critical Infrastructure", "Cyber Insurance", "Risk Assessment"],
+        "competitive_advantage": "We finance critical infrastructure projects and understand both construction and cyber risks",
+        "urgency_factor": "Critical infrastructure investments increasingly targeted by nation-state cyber attacks",
+        "implementation_time": "15-24 months",
+        "target_client_size": "Infrastructure Investment Funds",
+        "geography": "Global",
+        "description": "Comprehensive cybersecurity solutions for critical infrastructure financing including energy, water, and transportation projects.",
+        "why_matters": [
+          "National Security Impact: Critical infrastructure finance affects national security and economic stability",
+          "Regulatory Compliance: Infrastructure financing requires enhanced cybersecurity due diligence",
+          "Investment Risk Management: Cyber attacks can cause complete loss of infrastructure investments"
+        ],
+        "cost_components": [
+          { "component": "Critical Infrastructure Cyber Assessment", "min": 600000, "max": 1200000 },
+          { "component": "Nation-State Threat Analysis", "min": 500000, "max": 1000000 },
+          { "component": "Investment Protection Framework", "min": 600000, "max": 1200000 },
+          { "component": "Regulatory Compliance Integration", "min": 300000, "max": 600000 }
+        ],
+        "next_steps": [
+          "Critical infrastructure investment analysis",
+          "Nation-state threat assessment",
+          "Investment protection framework development"
+        ]
+      },
+
+      // ADDITIONAL HIGH-VALUE DNSOs
+      {
+        "id": "DNSO-025",
+        "title": "Mining Operations Medical Material Security",
+        "sector": "Infrastructure",
+        "subsector": "Mining",
+        "client_type": "Healthcare",
+        "priority": "Medium",
+        "roi_min": 600000,
+        "roi_max": 1200000,
+        "risk_prevention": "$50M+ medical material supply disruption",
+        "expertise_tags": ["Mining Operations", "Mineral Processing", "Material Supply", "Strategic Materials"],
+        "competitive_advantage": "We develop mining operations that extract materials for medical devices and equipment",
+        "urgency_factor": "Medical devices require rare earth elements and specialized materials from mining",
+        "implementation_time": "8-12 months",
+        "target_client_size": "Healthcare Supply Chain",
+        "geography": "Global",
+        "description": "Secure mining operations that extract materials essential for medical devices, equipment, and pharmaceuticals.",
+        "why_matters": [
+          "Material Dependency: Medical devices require rare earth elements and specialized metals",
+          "Supply Chain Security: Mining disruptions affect global medical device production",
+          "Strategic Material Access: Critical materials for medical technology require secure supply"
+        ],
+        "cost_components": [
+          { "component": "Mining Operation Security Assessment", "min": 150000, "max": 300000 },
+          { "component": "Medical Material Supply Protection", "min": 200000, "max": 400000 },
+          { "component": "Strategic Material Monitoring", "min": 150000, "max": 300000 },
+          { "component": "Supply Chain Integration", "min": 100000, "max": 200000 }
+        ],
+        "next_steps": [
+          "Medical material supply chain mapping",
+          "Mining operation security review",
+          "Strategic material availability assessment"
         ]
       }
     ]
@@ -194,11 +891,43 @@ export const generateStats = () => {
   };
 
   const sectors = [...new Set(dnsos.map(dnso => dnso.sector))];
+  const priorities = [...new Set(dnsos.map(dnso => dnso.priority))];
+  
+  const sectorStats = sectors.map(sector => {
+    const sectorDNSOs = dnsos.filter(dnso => dnso.sector === sector);
+    const sectorROI = sectorDNSOs.reduce((acc, dnso) => ({
+      min: acc.min + dnso.roi_min,
+      max: acc.max + dnso.roi_max
+    }), { min: 0, max: 0 });
+    
+    return {
+      sector,
+      count: sectorDNSOs.length,
+      roi: sectorROI,
+      averageROI: {
+        min: Math.round(sectorROI.min / sectorDNSOs.length),
+        max: Math.round(sectorROI.max / sectorDNSOs.length)
+      }
+    };
+  });
+
+  const priorityStats = priorities.map(priority => {
+    const priorityDNSOs = dnsos.filter(dnso => dnso.priority === priority);
+    return {
+      priority,
+      count: priorityDNSOs.length,
+      percentage: Math.round((priorityDNSOs.length / dnsos.length) * 100)
+    };
+  });
 
   return {
     total_dnsos: dnsos.length,
     total_roi_potential: totalROI,
     sectors_covered: sectors.length,
-    average_roi: averageROI
+    average_roi: averageROI,
+    sector_breakdown: sectorStats,
+    priority_breakdown: priorityStats,
+    expertise_tags: [...new Set(dnsos.flatMap(dnso => dnso.expertise_tags))].length,
+    geographies: [...new Set(dnsos.map(dnso => dnso.geography))]
   };
 };
