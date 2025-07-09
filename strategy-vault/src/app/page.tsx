@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { dnsoData, generateStats } from '../data/dnso-data';
 import { 
   Search, 
   Filter, 
@@ -28,13 +29,26 @@ interface DNSO {
   id: string;
   title: string;
   sector: string;
+  subsector?: string;
   client_type: string;
-  priority: 'Critical' | 'High' | 'Medium';
+  priority: string; // Cambiado para ser más flexible
   roi_min: number;
   roi_max: number;
   competitive_advantage: string;
   implementation_time: string;
   geography: string;
+  description?: string;
+  risk_prevention?: string;
+  expertise_tags?: string[];
+  urgency_factor?: string;
+  target_client_size?: string;
+  why_matters?: string[];
+  cost_components?: Array<{
+    component: string;
+    min: number;
+    max: number;
+  }>;
+  next_steps?: string[];
 }
 
 interface Stats {
@@ -70,13 +84,10 @@ export default function StrategyVault() {
   useEffect(() => {
     async function loadData() {
       try {
-        const [dnsosRes, statsRes] = await Promise.all([
-          fetch('/api'),
-          fetch('/api?path=stats')
-        ]);
-        
-        const dnsosData = await dnsosRes.json();
-        const statsData = await statsRes.json();
+        // Use static data for exported version
+        console.log('Using static data (export mode)');
+        const dnsosData = { success: true, data: dnsoData.dnso_database.dnsos };
+        const statsData = { success: true, data: generateStats() };
         
         if (dnsosData.success) {
           setDNSOs(dnsosData.data);
@@ -88,6 +99,10 @@ export default function StrategyVault() {
         }
       } catch (error) {
         console.error('Error loading data:', error);
+        // Final fallback to static data
+        setDNSOs(dnsoData.dnso_database.dnsos);
+        setFilteredDNSOs(dnsoData.dnso_database.dnsos);
+        setStats(generateStats());
       } finally {
         setLoading(false);
       }
@@ -135,8 +150,8 @@ export default function StrategyVault() {
         case 'roi':
           return b.roi_max - a.roi_max;
         case 'priority':
-          const priorityOrder = { 'Critical': 3, 'High': 2, 'Medium': 1 };
-          return priorityOrder[b.priority] - priorityOrder[a.priority];
+          const priorityOrder: { [key: string]: number } = { 'Critical': 3, 'High': 2, 'Medium': 1 };
+          return (priorityOrder[b.priority] || 0) - (priorityOrder[a.priority] || 0);
         case 'sector':
           return a.sector.localeCompare(b.sector);
         default:
