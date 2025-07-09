@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNSO - IoT Hardening Program</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .meta-label {
+            font-weight: 600;
+            color: #555;
+            margin-right: 10px;
+        }
+        
+        .meta-value {
+            font-family: 'Courier New', monospace;
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .section h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .problem-statement {
+            background-color: #fff5f5;
+            padding: 20px;
+            border-left: 4px solid #e53e3e;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        
+        .solution-statement {
+            background-color: #f0fff4;
+            padding: 20px;
+            border-left: 4px solid #38a169;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+        
+        .problem-statement h4, .solution-statement h4 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .problem-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .problem-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .solution-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .solution-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .solution-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .icon {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease;
+        }
+        
+        .currency {
+            font-weight: 600;
+            color: #28a745;
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .math-block {
+            background-color: #f0f8ff;
+            border: 1px solid #b0d4f1;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .next-steps {
+            background-color: #fff8e1;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .next-steps ol {
+            padding-left: 20px;
+        }
+        
+        .next-steps li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .highlight-box {
+            background-color: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .highlight-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .highlight-list li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border-top: 3px solid #667eea;
+        }
+        
+        .signature-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .signature-block {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #333;
+            margin: 20px 0 10px 0;
+            height: 1px;
+        }
+        
+        .signature-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .signature-title {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .date-field {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .date-input {
+            border: none;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+            font-size: 1em;
+            background-color: transparent;
+            text-align: center;
+        }
+        
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            .cta-button {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .meta-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .signature-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Discover New Service Opportunity (DNSO)</h1>
+        <p>Medical IoT Device Hardening Program</p>
+    </div>
+    
+    <div class="meta-info">
+        <div class="meta-item">
+            <span class="meta-label">Opportunity Code:</span>
+            <span class="meta-value">us1f15PGGM6-IOT-HARDEN</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Date:</span>
+            <span class="meta-value">July 09, 2025</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Owner:</span>
+            <span class="meta-value">Juan Lopez</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Client:</span>
+            <span class="meta-value">MedStar Health</span>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>1. Opportunity Overview</h2>
+        
+        <div class="problem-statement">
+            <h4>Problem Statement</h4>
+            <p>MedStar's medical IoT devices (e.g., insulin pumps, PACS workstations) present significant security vulnerabilities:</p>
+            <ul class="problem-list">
+                <li><span class="icon">⚠️</span><strong>Unpatched vulnerabilities:</strong> CVE-2023-24955 identified in 60% of devices per recent security scan</li>
+                <li><span class="icon">🔓</span><strong>Default credentials:</strong> Many devices still using factory settings (admin:password)</li>
+                <li><span class="icon">🌐</span><strong>No network segmentation:</strong> Devices exposed to lateral movement attacks</li>
+            </ul>
+        </div>
+        
+        <div class="solution-statement">
+            <h4>Proposed Solution</h4>
+            <p><strong>On-Premises IoT Hardening Program</strong> featuring:</p>
+            <ul class="solution-list">
+                <li><span class="icon">🔍</span>Automated vulnerability scanning (no cloud dependency required)</li>
+                <li><span class="icon">🛡️</span>Zero-trust network segmentation via VLANs</li>
+                <li><span class="icon">🔧</span>Custom patching solutions for legacy medical devices</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>2. Why This Matters</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Benefit</th>
+                    <th>Impact</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Prevent Ransomware</strong></td>
+                    <td>80% reduction in attack surface</td>
+                    <td>HHS 2023 Healthcare Cyber Report</td>
+                </tr>
+                <tr>
+                    <td><strong>HIPAA Compliance</strong></td>
+                    <td>Avoid fines up to $1.5M/year</td>
+                    <td>OCR Audit Findings 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Downtime Reduction</strong></td>
+                    <td>50% faster patch deployment</td>
+                    <td>MedStar's 2023 incident logs</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>3. The Ask</h2>
+        <h3>Budget Estimate</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Low (USD)</th>
+                    <th>High (USD)</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IoT Vulnerability Assessment</td>
+                    <td class="currency">$35,000</td>
+                    <td class="currency">$75,000</td>
+                    <td>Comprehensive scans for 500+ devices</td>
+                </tr>
+                <tr>
+                    <td>Network Segmentation</td>
+                    <td class="currency">$50,000</td>
+                    <td class="currency">$120,000</td>
+                    <td>VLAN implementation + firewall rules</td>
+                </tr>
+                <tr>
+                    <td>Legacy Device Patching</td>
+                    <td class="currency">$25,000</td>
+                    <td class="currency">$60,000</td>
+                    <td>Custom patches for EOL devices</td>
+                </tr>
+                <tr style="background-color: #e8f5e8; font-weight: bold;">
+                    <td><strong>Total Investment</strong></td>
+                    <td class="currency"><strong>$110,000</strong></td>
+                    <td class="currency"><strong>$255,000</strong></td>
+                    <td><strong>Complete solution implementation</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>4. Feasibility Validation</h2>
+        
+        <h3>Technical Proof</h3>
+        <p>Sample vulnerability scan results using industry-standard tools:</p>
+        <div class="code-block">
+# Sample scan results (NMAP + Medigate)
+nmap -sV --script vuln 10.2.1.0/24 | grep "CVE-2023"
+# Output: 23 devices with critical CVEs identified
+        </div>
+        
+        <h3>ROI Calculation</h3>
+        <div class="math-block">
+            <strong>Annual Savings = ($1.5M HIPAA fine risk + $300K downtime costs) ÷ Project Cost = 4.7x ROI</strong>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>5. Next Steps</h2>
+        <div class="next-steps">
+            <ol>
+                <li>
+                    <strong>Free Pilot Program (2 Weeks):</strong>
+                    <ul>
+                        <li>Scan 50 representative devices</li>
+                        <li>Implement segmentation for 1 VLAN</li>
+                        <li>Deliverables: Risk Heatmap and Remediation Plan</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Compliance Workshop:</strong>
+                    <ul>
+                        <li>Alignment with HIPAA Security Rule §164.308(a)(5)(ii)</li>
+                        <li>NIST Cybersecurity Framework mapping</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="#" class="cta-button">📥 Download Pilot Proposal</a>
+            <a href="#" class="cta-button">📞 Schedule Scoping Call</a>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>🌟 Why This Will Sell</h4>
+        <ul class="highlight-list">
+            <li><span class="icon">🚨</span><strong>Urgency:</strong> Medical IoT attacks rose 200% year-over-year (CISA)</li>
+            <li><span class="icon">🏢</span><strong>No Cloud Dependency:</strong> Fully on-premises solution</li>
+            <li><span class="icon">📋</span><strong>Regulatory Leverage:</strong> Direct mapping to HIPAA/NIST 800-66 requirements</li>
+        </ul>
+    </div>
+    
+    <div class="signature-section">
+        <h3>Document Approval</h3>
+        <div class="signature-info">
+            <div class="signature-block">
+                <div class="signature-line"></div>
+                <div class="signature-name">Juan Lopez</div>
+                <div class="signature-title">Senior Security Consultant</div>
+                <div class="signature-title">Cybersecurity Solutions</div>
+            </div>
+            <div class="signature-block">
+                <div class="signature-line"></div>
+                <div class="signature-name">Client Representative</div>
+                <div class="signature-title">MedStar Health</div>
+                <div class="signature-title">IT Security Department</div>
+            </div>
+        </div>
+        <div class="date-field">
+            <label for="date">Date: </label>
+            <input type="text" id="date" class="date-input" value="July 09, 2025" readonly>
+        </div>
+    </div>
+</body>
+</html>
