@@ -215,6 +215,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.025em;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
 }
 
 .btn-executive:hover {
@@ -227,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border: 1px solid #cbd5e1;
   color: #475569;
+  cursor: pointer;
 }
 
 .btn-secondary:hover {
