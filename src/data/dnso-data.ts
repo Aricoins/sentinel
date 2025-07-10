@@ -1,4 +1,5 @@
-// Expanded DNSO database with 50+ opportunities based on multinational engineering expertise
+
+
 export const dnsoData = {
   "dnso_database": {
     "metadata": {
@@ -8,7 +9,346 @@ export const dnsoData = {
       "sectors_covered": ["Energy", "Chemical/Pharmaceutical", "Government/Defense", "Infrastructure", "Technology", "Manufacturing"],
       "target_markets": ["Healthcare", "Manufacturing", "Government", "Critical Infrastructure", "Financial Services"]
     },
-    "dnsos": [
+    "dnsos": [    {
+      "id": "DNSO-026",
+      "title": "LNG Terminal Security for Medical Gas Supply",
+      "sector": "Energy",
+      "subsector": "LNG Operations",
+      "client_type": "Healthcare",
+      "priority": "Critical",
+      "roi_min": 1200000,
+      "roi_max": 2400000,
+      "risk_prevention": "$500M+ medical gas supply disruption + patient safety",
+      "expertise_tags": ["LNG Terminals", "Medical Gas Supply", "Process Safety", "Critical Infrastructure"],
+      "competitive_advantage": "We build LNG terminals that supply gases essential for medical oxygen and anesthesia production",
+      "urgency_factor": "Medical gas shortages can shut down entire hospitals and endanger thousands of patients",
+      "implementation_time": "10-15 months",
+      "target_client_size": "Regional Healthcare Networks",
+      "geography": "Global",
+      "description": "Secure LNG terminal operations that supply gases essential for medical oxygen, anesthesia, and life support systems in healthcare facilities.",
+      "why_matters": [
+        "Medical Gas Dependency: Hospitals require constant supply of medical gases for patient care and surgery",
+        "Life Support Critical: Medical gas disruption can disable life support systems affecting ICU patients",
+        "Supply Chain Vulnerability: Limited LNG terminals create single points of failure for medical gas supply"
+      ],
+      "cost_components": [
+        { "component": "LNG Terminal Security Assessment", "min": 300000, "max": 600000 },
+        { "component": "Medical Gas Supply Chain Protection", "min": 400000, "max": 800000 },
+        { "component": "Process Safety Integration", "min": 300000, "max": 600000 },
+        { "component": "Emergency Supply Monitoring", "min": 200000, "max": 400000 }
+      ],
+      "next_steps": [
+        "Medical gas supply chain mapping",
+        "LNG terminal vulnerability assessment",
+        "Emergency supply contingency planning"
+      ]
+    },
+    {
+      "id": "DNSO-027",
+      "title": "Biofuel Production Security for Pharmaceutical Solvents",
+      "sector": "Energy",
+      "subsector": "Biofuels",
+      "client_type": "Healthcare",
+      "priority": "High",
+      "roi_min": 700000,
+      "roi_max": 1400000,
+      "risk_prevention": "$100M+ pharmaceutical solvent supply disruption",
+      "expertise_tags": ["Biofuel Plants", "Pharmaceutical Solvents", "Chemical Processing", "Green Chemistry"],
+      "competitive_advantage": "We build biofuel plants that produce ethanol and solvents used in pharmaceutical manufacturing",
+      "urgency_factor": "Pharmaceutical production depends on bio-based solvents increasingly replacing petroleum derivatives",
+      "implementation_time": "6-9 months",
+      "target_client_size": "Pharmaceutical Manufacturers",
+      "geography": "Global",
+      "description": "Secure biofuel production facilities that supply ethanol and bio-based solvents essential for pharmaceutical manufacturing and drug formulation.",
+      "why_matters": [
+        "Pharmaceutical Manufacturing: Bio-based solvents essential for drug production and formulation",
+        "Green Chemistry Transition: Pharmaceutical industry shifting to sustainable bio-based solvents",
+        "Supply Security: Biofuel plant disruptions can halt pharmaceutical production globally"
+      ],
+      "cost_components": [
+        { "component": "Biofuel Plant Security Assessment", "min": 175000, "max": 350000 },
+        { "component": "Pharmaceutical Solvent Supply Protection", "min": 200000, "max": 400000 },
+        { "component": "Green Chemistry Process Security", "min": 175000, "max": 350000 },
+        { "component": "Supply Chain Integration", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Pharmaceutical solvent dependency analysis",
+        "Biofuel plant security review",
+        "Green chemistry supply chain assessment"
+      ]
+    },
+    {
+      "id": "DNSO-028",
+      "title": "Specialty Chemical Manufacturing Security for Diagnostics",
+      "sector": "Chemical/Pharmaceutical",
+      "subsector": "Specialty Chemicals",
+      "client_type": "Healthcare",
+      "priority": "High",
+      "roi_min": 800000,
+      "roi_max": 1600000,
+      "risk_prevention": "$200M+ diagnostic chemical supply disruption",
+      "expertise_tags": ["Specialty Chemicals", "Diagnostic Reagents", "Chemical Manufacturing", "Quality Control"],
+      "competitive_advantage": "We design specialty chemical plants producing reagents essential for medical diagnostics and testing",
+      "urgency_factor": "Medical diagnostic testing depends on specialty chemicals with limited global production sources",
+      "implementation_time": "8-12 months",
+      "target_client_size": "Diagnostic Companies",
+      "geography": "Global",
+      "description": "Secure specialty chemical manufacturing facilities producing reagents, contrast agents, and chemicals essential for medical diagnostics and laboratory testing.",
+      "why_matters": [
+        "Diagnostic Testing Dependency: Medical diagnostics require specialty chemicals for accurate test results",
+        "Limited Production Sources: Few facilities globally produce specialized diagnostic chemicals",
+        "Patient Care Impact: Diagnostic chemical shortages delay critical medical testing and treatment"
+      ],
+      "cost_components": [
+        { "component": "Specialty Chemical Plant Security", "min": 200000, "max": 400000 },
+        { "component": "Diagnostic Reagent Protection", "min": 250000, "max": 500000 },
+        { "component": "Quality Control Integration", "min": 200000, "max": 400000 },
+        { "component": "Supply Chain Monitoring", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Diagnostic chemical supply mapping",
+        "Specialty chemical plant assessment",
+        "Quality control system review"
+      ]
+    },
+    {
+      "id": "DNSO-029",
+      "title": "Medical Isotope Reactor Cybersecurity",
+      "sector": "Chemical/Pharmaceutical",
+      "subsector": "Medical Isotopes",
+      "client_type": "Healthcare",
+      "priority": "Critical",
+      "roi_min": 1500000,
+      "roi_max": 3000000,
+      "risk_prevention": "$1B+ medical isotope supply + cancer treatment protection",
+      "expertise_tags": ["Medical Isotope Reactors", "Nuclear Medicine", "Radiation Safety", "Medical Supply"],
+      "competitive_advantage": "We build medical isotope production reactors essential for cancer diagnosis and treatment",
+      "urgency_factor": "Medical isotope shortage affects millions of cancer patients globally with no substitute sources",
+      "implementation_time": "15-24 months",
+      "target_client_size": "Nuclear Medicine Centers",
+      "geography": "North America, Europe",
+      "description": "Secure medical isotope production reactors that produce radioactive materials essential for cancer imaging, diagnosis, and treatment.",
+      "why_matters": [
+        "Cancer Treatment Critical: Medical isotopes essential for cancer diagnosis and treatment with no alternatives",
+        "Global Supply Shortage: Limited medical isotope reactors create critical supply vulnerabilities",
+        "Patient Impact: Isotope shortages delay cancer treatment affecting survival rates"
+      ],
+      "cost_components": [
+        { "component": "Medical Isotope Reactor Security", "min": 500000, "max": 1000000 },
+        { "component": "Nuclear Medicine Supply Protection", "min": 400000, "max": 800000 },
+        { "component": "Radiation Safety Integration", "min": 300000, "max": 600000 },
+        { "component": "Medical Supply Chain Monitoring", "min": 300000, "max": 600000 }
+      ],
+      "next_steps": [
+        "Medical isotope reactor assessment",
+        "Nuclear medicine supply analysis",
+        "Radiation safety protocol review"
+      ]
+    },
+    {
+      "id": "DNSO-030",
+      "title": "Pharmaceutical Waste Treatment Security",
+      "sector": "Chemical/Pharmaceutical",
+      "subsector": "Waste Treatment",
+      "client_type": "Healthcare",
+      "priority": "Medium",
+      "roi_min": 500000,
+      "roi_max": 1000000,
+      "risk_prevention": "$50M+ environmental liability + regulatory compliance",
+      "expertise_tags": ["Pharmaceutical Waste", "Waste Treatment", "Environmental Compliance", "Hazmat Processing"],
+      "competitive_advantage": "We design pharmaceutical waste treatment facilities ensuring safe disposal of medical and chemical waste",
+      "urgency_factor": "Pharmaceutical waste requires specialized treatment to prevent environmental contamination and regulatory violations",
+      "implementation_time": "6-10 months",
+      "target_client_size": "Pharmaceutical Companies",
+      "geography": "Global",
+      "description": "Secure pharmaceutical waste treatment facilities that safely process and dispose of medical waste, expired drugs, and chemical byproducts.",
+      "why_matters": [
+        "Environmental Protection: Pharmaceutical waste can contaminate water supplies and ecosystems",
+        "Regulatory Compliance: Improper pharmaceutical waste disposal triggers massive EPA penalties",
+        "Public Health Safety: Pharmaceutical waste in environment affects community health"
+      ],
+      "cost_components": [
+        { "component": "Pharmaceutical Waste Facility Security", "min": 125000, "max": 250000 },
+        { "component": "Environmental Compliance Integration", "min": 150000, "max": 300000 },
+        { "component": "Hazmat Processing Protection", "min": 125000, "max": 250000 },
+        { "component": "Regulatory Monitoring", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Pharmaceutical waste processing assessment",
+        "Environmental compliance review",
+        "Regulatory framework integration"
+      ]
+    },
+    {
+      "id": "DNSO-031",
+      "title": "Military Medical Facility Construction Security",
+      "sector": "Government/Defense",
+      "subsector": "Military Medical",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 1800000,
+      "roi_max": 3600000,
+      "risk_prevention": "Military medical readiness + operational security protection",
+      "expertise_tags": ["Military Medical Facilities", "Defense Construction", "Medical Security", "OPSEC"],
+      "competitive_advantage": "We build military medical facilities with integrated security that supports both combat and civilian medical operations",
+      "urgency_factor": "Military medical facilities must maintain readiness while providing civilian emergency medical support",
+      "implementation_time": "18-30 months",
+      "target_client_size": "Department of Defense",
+      "geography": "Global (US Military Bases)",
+      "description": "Secure military medical facility construction with integrated cybersecurity for combat medical readiness and civilian emergency response.",
+      "why_matters": [
+        "Military Medical Readiness: Combat medical facilities essential for military operations and troop health",
+        "Dual-Use Capability: Military medical facilities provide emergency civilian medical care during disasters",
+        "Operational Security: Medical data can reveal military operations and personnel deployment patterns"
+      ],
+      "cost_components": [
+        { "component": "Military Medical Facility Security", "min": 500000, "max": 1000000 },
+        { "component": "Combat Medical System Protection", "min": 600000, "max": 1200000 },
+        { "component": "OPSEC Integration", "min": 400000, "max": 800000 },
+        { "component": "Dual-Use Medical Capability", "min": 300000, "max": 600000 }
+      ],
+      "next_steps": [
+        "Military medical facility assessment",
+        "Combat medical system review",
+        "OPSEC integration planning"
+      ]
+    },
+    {
+      "id": "DNSO-032",
+      "title": "Government Emergency Medical Stockpile Security",
+      "sector": "Government/Defense",
+      "subsector": "Emergency Preparedness",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 1200000,
+      "roi_max": 2400000,
+      "risk_prevention": "$5B+ strategic medical reserve protection",
+      "expertise_tags": ["Strategic Medical Reserve", "Emergency Stockpiles", "Disaster Preparedness", "Medical Logistics"],
+      "competitive_advantage": "We build and manage government medical stockpile facilities for national emergency preparedness",
+      "urgency_factor": "Strategic medical reserves essential for pandemic response and national emergency medical capacity",
+      "implementation_time": "12-18 months",
+      "target_client_size": "Federal Emergency Agencies",
+      "geography": "National",
+      "description": "Secure government strategic medical stockpiles including vaccines, PPE, and emergency medical supplies for national disaster response.",
+      "why_matters": [
+        "National Preparedness: Strategic medical reserves essential for pandemic and disaster response",
+        "Supply Chain Resilience: Government stockpiles provide backup when commercial medical supply chains fail",
+        "Public Health Security: Medical stockpile disruption affects national emergency response capability"
+      ],
+      "cost_components": [
+        { "component": "Strategic Stockpile Security Assessment", "min": 300000, "max": 600000 },
+        { "component": "Medical Supply Protection", "min": 400000, "max": 800000 },
+        { "component": "Emergency Distribution Security", "min": 300000, "max": 600000 },
+        { "component": "National Coordination Integration", "min": 200000, "max": 400000 }
+      ],
+      "next_steps": [
+        "Strategic medical stockpile assessment",
+        "Emergency distribution planning",
+        "National coordination integration"
+      ]
+    },
+    {
+      "id": "DNSO-033",
+      "title": "Airport Medical Emergency Response Security",
+      "sector": "Infrastructure",
+      "subsector": "Airport Construction",
+      "client_type": "Healthcare",
+      "priority": "High",
+      "roi_min": 900000,
+      "roi_max": 1800000,
+      "risk_prevention": "$200M+ airport medical emergency capability",
+      "expertise_tags": ["Airport Construction", "Medical Emergency Response", "Air Medical Services", "Emergency Systems"],
+      "competitive_advantage": "We build airports with integrated medical emergency response capabilities and air medical service support",
+      "urgency_factor": "Airports serve as critical nodes for medical emergency response and air medical transport",
+      "implementation_time": "8-14 months",
+      "target_client_size": "Airport Authorities",
+      "geography": "Global",
+      "description": "Secure airport infrastructure supporting medical emergency response including air medical services, emergency medical facilities, and medical supply transport.",
+      "why_matters": [
+        "Medical Transport Hub: Airports essential for air medical transport and emergency medical response",
+        "Emergency Medical Capability: Airport medical facilities provide critical emergency care for travelers and community",
+        "Medical Supply Distribution: Airports serve as distribution hubs for emergency medical supplies during disasters"
+      ],
+      "cost_components": [
+        { "component": "Airport Medical Emergency Security", "min": 225000, "max": 450000 },
+        { "component": "Air Medical Service Protection", "min": 300000, "max": 600000 },
+        { "component": "Emergency Medical Facility Security", "min": 225000, "max": 450000 },
+        { "component": "Medical Supply Distribution Security", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Airport medical emergency assessment",
+        "Air medical service integration",
+        "Emergency medical facility planning"
+      ]
+    },
+    {
+      "id": "DNSO-034",
+      "title": "Bridge Infrastructure Medical Access Security",
+      "sector": "Infrastructure",
+      "subsector": "Bridge Construction",
+      "client_type": "Healthcare",
+      "priority": "High",
+      "roi_min": 700000,
+      "roi_max": 1400000,
+      "risk_prevention": "$150M+ medical access infrastructure protection",
+      "expertise_tags": ["Bridge Construction", "Medical Access", "Emergency Routes", "Infrastructure Security"],
+      "competitive_advantage": "We build bridges that provide critical access routes to healthcare facilities and emergency medical services",
+      "urgency_factor": "Bridge infrastructure essential for medical emergency response and healthcare facility access",
+      "implementation_time": "6-12 months",
+      "target_client_size": "Transportation Authorities",
+      "geography": "Global",
+      "description": "Secure bridge infrastructure that provides critical access routes to healthcare facilities, emergency medical services, and medical supply transport.",
+      "why_matters": [
+        "Medical Emergency Access: Bridges provide critical access routes for emergency medical services",
+        "Healthcare Facility Access: Patient access to healthcare facilities depends on secure bridge infrastructure",
+        "Medical Supply Transport: Bridge infrastructure essential for medical supply chain transportation"
+      ],
+      "cost_components": [
+        { "component": "Bridge Infrastructure Security Assessment", "min": 175000, "max": 350000 },
+        { "component": "Medical Access Route Protection", "min": 225000, "max": 450000 },
+        { "component": "Emergency Response Integration", "min": 175000, "max": 350000 },
+        { "component": "Medical Supply Route Security", "min": 125000, "max": 250000 }
+      ],
+      "next_steps": [
+        "Critical medical access route mapping",
+        "Bridge infrastructure assessment",
+        "Emergency response coordination"
+      ]
+    },
+    {
+      "id": "DNSO-035",
+      "title": "Road Infrastructure Ambulance Response Security",
+      "sector": "Infrastructure",
+      "subsector": "Highway Construction",
+      "client_type": "Healthcare",
+      "priority": "Medium",
+      "roi_min": 600000,
+      "roi_max": 1200000,
+      "risk_prevention": "$100M+ emergency medical response capability",
+      "expertise_tags": ["Highway Construction", "Emergency Medical Services", "Ambulance Response", "Traffic Management"],
+      "competitive_advantage": "We build highway infrastructure that supports rapid emergency medical response and ambulance services",
+      "urgency_factor": "Highway infrastructure critical for ambulance response times and emergency medical service effectiveness",
+      "implementation_time": "6-10 months",
+      "target_client_size": "Emergency Medical Services",
+      "geography": "Regional",
+      "description": "Secure highway and road infrastructure supporting rapid ambulance response, emergency medical services, and medical transport coordination.",
+      "why_matters": [
+        "Ambulance Response Times: Highway infrastructure directly affects emergency medical response times",
+        "Emergency Medical Access: Road infrastructure essential for emergency medical service delivery",
+        "Medical Transport Security: Highway systems must remain operational during medical emergencies"
+      ],
+      "cost_components": [
+        { "component": "Highway Infrastructure Security", "min": 150000, "max": 300000 },
+        { "component": "Emergency Medical Service Integration", "min": 200000, "max": 400000 },
+        { "component": "Ambulance Response Optimization", "min": 150000, "max": 300000 },
+        { "component": "Medical Transport Coordination", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Emergency medical service route analysis",
+        "Highway infrastructure assessment",
+        "Ambulance response optimization"
+      ]
+          },
       // ENERGY SECTOR - Leveraging oil/gas, renewable, nuclear expertise
       {
         "id": "DNSO-001",
