@@ -31,10 +31,7 @@ jobs:
         run: npm ci
         
       - name: Build Next.js app
-        run: npm run build
-        
-      - name: Add .nojekyll file
-        run: touch out/.nojekyll
+        run: npm run export
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

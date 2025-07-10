@@ -7,8 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build",
-    "deploy": "npm run export && touch out/.nojekyll"
+    "export": "next build && touch out/.nojekyll",
+    "deploy": "npm run export && touch out/.nojekyll",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "lucide-react": "^0.525.0",
