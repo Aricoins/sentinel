@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { dnsoData, generateStats } from '../data/dnso-data';
+import StatsDashboard from '../components/StatsDashboard';
 import { 
   Search, 
   Filter, 
@@ -22,7 +23,8 @@ import {
   DollarSign,
   Briefcase,
   MapPin,
-  Plus
+  Plus,
+  BarChart3
 } from 'lucide-react';
 
 interface DNSO {
@@ -56,6 +58,19 @@ interface Stats {
   total_roi_potential: { min: number; max: number };
   sectors_covered: number;
   average_roi: { min: number; max: number };
+  sector_breakdown: Array<{
+    sector: string;
+    count: number;
+    roi: { min: number; max: number };
+    averageROI: { min: number; max: number };
+  }>;
+  priority_breakdown: Array<{
+    priority: string;
+    count: number;
+    percentage: number;
+  }>;
+  expertise_tags: number;
+  geographies: string[];
 }
 
 export default function StrategyVault() {
@@ -64,6 +79,7 @@ export default function StrategyVault() {
   const [filteredDNSOs, setFilteredDNSOs] = useState<DNSO[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [currentView, setCurrentView] = useState<'portfolio' | 'dashboard'>('portfolio');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedDNSOs, setSelectedDNSOs] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'roi' | 'priority' | 'sector'>('roi');
@@ -225,18 +241,33 @@ export default function StrategyVault() {
                 <p className="text-sm text-gray-500 font-medium">Discover New Service Opportunities</p>
               </div>
               <nav className="hidden md:ml-10 md:flex space-x-8">
-                <a href="#" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-semibold transition-colors">
+                <button 
+                  onClick={() => setCurrentView('portfolio')}
+                  className={`${currentView === 'portfolio' ? 'text-blue-600 bg-blue-50' : 'text-gray-500 hover:text-blue-600'} px-3 py-2 text-sm font-medium transition-colors rounded-lg`}
+                >
+                  Portfolio
+                </button>
+                <button 
+                  onClick={() => setCurrentView('dashboard')}
+                  className={`${currentView === 'dashboard' ? 'text-blue-600 bg-blue-50' : 'text-gray-500 hover:text-blue-600'} px-3 py-2 text-sm font-medium transition-colors rounded-lg flex items-center`}
+                >
+                  <BarChart3 className="w-4 h-4 mr-2" />
                   Dashboard
-                </a>
-                <a href="#" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
-                  Analytics
-                </a>
+                </button>
                 <a href="#" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
                   Pipeline
                 </a>
               </nav>
             </div>
             <div className="flex items-center space-x-4">
+              {/* Mobile Dashboard Toggle */}
+              <button 
+                onClick={() => setCurrentView(currentView === 'dashboard' ? 'portfolio' : 'dashboard')}
+                className="md:hidden btn-secondary"
+              >
+                <BarChart3 className="w-4 h-4 mr-2" />
+                {currentView === 'dashboard' ? 'Portfolio' : 'Dashboard'}
+              </button>
               <button className="btn-secondary">
                 <FileText className="w-4 h-4 mr-2" />
                 Export Report
@@ -250,7 +281,29 @@ export default function StrategyVault() {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Conditional Content Rendering */}
+      {currentView === 'dashboard' ? (
+        stats && (
+          <StatsDashboard 
+            dnsos={dnsos} 
+            stats={stats} 
+            loading={loading}
+            onExport={() => {
+              console.log('Exporting dashboard data...');
+              alert('Dashboard export functionality will be implemented');
+            }}
+            onRefresh={() => {
+              setLoading(true);
+              // Simulate refresh
+              setTimeout(() => {
+                setStats(generateStats());
+                setLoading(false);
+              }, 1000);
+            }}
+          />
+        )
+      ) : (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Executive Dashboard */}
         {stats && (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -587,6 +640,7 @@ export default function StrategyVault() {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }
