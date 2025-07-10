@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "StrategyVault - Strategic Opportunity Management",
   description: "Enterprise-grade DNSO (Discover New Service Opportunities) management platform. McKinsey/BCG-inspired strategic planning tools for executives and consultants.",
   icons: {
-    icon: '/favicon.ico',
+    icon: process.env.NODE_ENV === 'production' ? '/sentinel/favicon.ico' : '/favicon.ico',
   },
 };
 
@@ -27,6 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta 
+          httpEquiv="Content-Security-Policy" 
+          content="default-src 'self'; img-src 'self' data: https://aricoins.github.io; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' https://fonts.gstatic.com;"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
