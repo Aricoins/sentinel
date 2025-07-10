@@ -9,7 +9,359 @@ export const dnsoData = {
       "sectors_covered": ["Energy", "Chemical/Pharmaceutical", "Government/Defense", "Infrastructure", "Technology", "Manufacturing"],
       "target_markets": ["Healthcare", "Manufacturing", "Government", "Critical Infrastructure", "Financial Services"]
     },
-    "dnsos": [    {
+    "dnsos": [   
+    {
+      "id": "DNSO-046",
+      "title": "Advanced Persistent Threat Detection",
+      "sector": "Government/Defense",
+      "subsector": "Intelligence Agencies",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 1500000,
+      "roi_max": 3000000,
+      "risk_prevention": "Prevents nation-state APT attacks that can compromise classified information and national security",
+      "expertise_tags": ["APT Detection", "Threat Hunting", "SIEM Integration", "Nation-State Threats"],
+      "competitive_advantage": "Government security clearance and experience with classified systems requiring highest security levels",
+      "urgency_factor": "Foreign intelligence services increasingly targeting government agencies through sophisticated APT campaigns",
+      "implementation_time": "12-18 months",
+      "target_client_size": "Federal Intelligence Agencies",
+      "geography": "United States",
+      "description": "We propose a comprehensive APT detection and response engagement designed to identify advanced persistent threats targeting government systems. This assessment will implement behavioral analytics, threat hunting capabilities, and advanced detection techniques to identify nation-state level adversaries.",
+      "why_matters": [
+        "National Security Critical: APT attacks can compromise classified information affecting national security",
+        "Sophisticated Adversaries: Nation-state threats require advanced detection capabilities beyond traditional security tools",
+        "Persistent Threat Landscape: APT groups maintain long-term access to government systems for intelligence gathering"
+      ],
+      "cost_components": [
+        { "component": "APT Detection Platform Implementation", "min": 500000, "max": 1000000 },
+        { "component": "Threat Hunting Program Development", "min": 400000, "max": 800000 },
+        { "component": "Advanced Analytics & AI Integration", "min": 400000, "max": 800000 },
+        { "component": "Intelligence Integration & Reporting", "min": 200000, "max": 400000 }
+      ],
+      "next_steps": [
+        "Assess current threat detection capabilities and gaps",
+        "Implement advanced behavioral analytics platform",
+        "Develop threat hunting methodologies and procedures",
+        "Integrate threat intelligence feeds and analysis"
+      ]
+    },
+    {
+      "id": "DNSO-047",
+      "title": "Operational Technology Security Assessment",
+      "sector": "Manufacturing",
+      "subsector": "Industrial Operations",
+      "client_type": "Manufacturing",
+      "priority": "Critical",
+      "roi_min": 800000,
+      "roi_max": 1600000,
+      "risk_prevention": "Prevents OT attacks that can shut down manufacturing operations and cause safety incidents",
+      "expertise_tags": ["OT Security", "Industrial Networks", "Safety Systems", "Process Control"],
+      "competitive_advantage": "Deep understanding of industrial processes and operational technology from manufacturing facility construction",
+      "urgency_factor": "OT environments increasingly connected to IT networks creating new attack vectors for manufacturing disruption",
+      "implementation_time": "6-12 months",
+      "target_client_size": "Manufacturing Companies",
+      "geography": "Global",
+      "description": "We propose a specialized operational technology security assessment designed to evaluate security controls in manufacturing environments, industrial control systems, and safety-critical operations. This engagement will identify OT vulnerabilities and enhance manufacturing security posture.",
+      "why_matters": [
+        "Manufacturing Continuity: OT attacks can halt production lines causing millions in operational losses",
+        "Safety System Protection: Compromised safety systems can result in industrial accidents and worker injuries",
+        "IT-OT Convergence: Increasing connectivity between IT and OT systems creates new cybersecurity risks"
+      ],
+      "cost_components": [
+        { "component": "OT Network Security Assessment", "min": 200000, "max": 400000 },
+        { "component": "Industrial Control System Testing", "min": 300000, "max": 600000 },
+        { "component": "Safety System Security Review", "min": 200000, "max": 400000 },
+        { "component": "OT Security Framework Development", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Map OT network architecture and connected systems",
+        "Conduct security assessment of industrial control systems",
+        "Evaluate safety system security controls",
+        "Develop OT security monitoring and incident response"
+      ]
+    },
+    {
+      "id": "DNSO-048",
+      "title": "Mobile Application Security Testing",
+      "sector": "Technology",
+      "subsector": "Mobile Applications",
+      "client_type": "Technology",
+      "priority": "High",
+      "roi_min": 400000,
+      "roi_max": 800000,
+      "risk_prevention": "Prevents mobile app vulnerabilities that can expose customer data and business systems",
+      "expertise_tags": ["Mobile Security", "App Security Testing", "iOS Security", "Android Security"],
+      "competitive_advantage": "Mobile application development expertise combined with security testing capabilities",
+      "urgency_factor": "Mobile app vulnerabilities creating significant data breach risks as mobile adoption accelerates",
+      "implementation_time": "3-6 months",
+      "target_client_size": "Mobile App Developers",
+      "geography": "Global",
+      "description": "We propose comprehensive mobile application security testing designed to identify vulnerabilities in iOS and Android applications. This assessment will evaluate app security controls, data protection, and integration security across mobile platforms.",
+      "why_matters": [
+        "Data Protection Critical: Mobile apps handle sensitive customer data requiring robust security controls",
+        "Platform-Specific Risks: iOS and Android platforms have unique security considerations and vulnerabilities",
+        "Business System Integration: Mobile apps increasingly integrate with backend systems creating new attack vectors"
+      ],
+      "cost_components": [
+        { "component": "Mobile App Security Testing", "min": 100000, "max": 200000 },
+        { "component": "Platform Security Analysis", "min": 150000, "max": 300000 },
+        { "component": "Backend Integration Security", "min": 100000, "max": 200000 },
+        { "component": "Mobile Security Framework", "min": 50000, "max": 100000 }
+      ],
+      "next_steps": [
+        "Inventory mobile applications and platforms",
+        "Conduct automated and manual security testing",
+        "Evaluate mobile app data protection controls",
+        "Assess backend system integration security"
+      ]
+    },
+    {
+      "id": "DNSO-049",
+      "title": "Insider Threat Detection Program",
+      "sector": "Financial Services",
+      "subsector": "Investment Banking",
+      "client_type": "Financial Services",
+      "priority": "Critical",
+      "roi_min": 1000000,
+      "roi_max": 2000000,
+      "risk_prevention": "Prevents insider threats that can result in financial fraud and regulatory violations",
+      "expertise_tags": ["Insider Threat", "User Behavior Analytics", "Financial Fraud", "Compliance Monitoring"],
+      "competitive_advantage": "Financial services expertise combined with behavioral analytics and fraud detection capabilities",
+      "urgency_factor": "Insider threats account for 60% of security incidents in financial services with devastating impact",
+      "implementation_time": "8-12 months",
+      "target_client_size": "Investment Banks",
+      "geography": "Global",
+      "description": "We propose a comprehensive insider threat detection program designed to identify malicious or negligent insider activities in financial services. This engagement will implement behavioral analytics, user monitoring, and fraud detection to protect against insider threats.",
+      "why_matters": [
+        "Financial Fraud Prevention: Insider threats can result in massive financial losses and market manipulation",
+        "Regulatory Compliance: Financial regulations require monitoring and detection of insider trading and fraud",
+        "Reputation Protection: Insider threat incidents can destroy financial institution reputation and client trust"
+      ],
+      "cost_components": [
+        { "component": "User Behavior Analytics Platform", "min": 300000, "max": 600000 },
+        { "component": "Insider Threat Detection Implementation", "min": 400000, "max": 800000 },
+        { "component": "Financial Fraud Monitoring", "min": 200000, "max": 400000 },
+        { "component": "Compliance Reporting & Analytics", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Assess current insider threat detection capabilities",
+        "Implement user behavior analytics platform",
+        "Develop insider threat detection policies and procedures",
+        "Integrate compliance monitoring and reporting"
+      ]
+    },
+    {
+      "id": "DNSO-050",
+      "title": "Quantum-Safe Cryptography Assessment",
+      "sector": "Technology",
+      "subsector": "Cryptography",
+      "client_type": "Technology",
+      "priority": "High",
+      "roi_min": 700000,
+      "roi_max": 1400000,
+      "risk_prevention": "Prepares organizations for quantum computing threats that will break current encryption methods",
+      "expertise_tags": ["Quantum Cryptography", "Post-Quantum Security", "Encryption Assessment", "Cryptographic Modernization"],
+      "competitive_advantage": "Advanced cryptographic expertise and understanding of quantum computing implications for security",
+      "urgency_factor": "Quantum computing advances threaten current encryption standards requiring proactive cryptographic migration",
+      "implementation_time": "6-12 months",
+      "target_client_size": "Technology Companies",
+      "geography": "Global",
+      "description": "We propose a quantum-safe cryptography assessment designed to evaluate current encryption implementations and develop migration strategies for post-quantum cryptographic standards. This engagement will prepare organizations for the quantum computing era.",
+      "why_matters": [
+        "Quantum Threat Preparation: Quantum computers will break current encryption methods requiring new cryptographic approaches",
+        "Long-Term Data Protection: Sensitive data encrypted today may be vulnerable to future quantum attacks",
+        "Regulatory Compliance: Government agencies mandating quantum-safe cryptography adoption timelines"
+      ],
+      "cost_components": [
+        { "component": "Cryptographic Inventory & Assessment", "min": 200000, "max": 400000 },
+        { "component": "Quantum Risk Analysis", "min": 200000, "max": 400000 },
+        { "component": "Post-Quantum Migration Planning", "min": 200000, "max": 400000 },
+        { "component": "Quantum-Safe Implementation", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Inventory all cryptographic implementations and systems",
+        "Assess quantum vulnerability of current encryption",
+        "Develop post-quantum cryptography migration roadmap",
+        "Implement pilot quantum-safe cryptographic controls"
+      ]
+    },
+    {
+      "id": "DNSO-051",
+      "title": "DevSecOps Security Integration",
+      "sector": "Technology",
+      "subsector": "Software Development",
+      "client_type": "Technology",
+      "priority": "High",
+      "roi_min": 500000,
+      "roi_max": 1000000,
+      "risk_prevention": "Prevents security vulnerabilities in software development lifecycle and CI/CD pipelines",
+      "expertise_tags": ["DevSecOps", "CI/CD Security", "Application Security", "Secure Development"],
+      "competitive_advantage": "Software development expertise combined with security integration and automation capabilities",
+      "urgency_factor": "Rapid software development cycles creating security gaps that attackers exploit in production systems",
+      "implementation_time": "4-8 months",
+      "target_client_size": "Software Development Companies",
+      "geography": "Global",
+      "description": "We propose a comprehensive DevSecOps security integration engagement designed to embed security controls throughout the software development lifecycle. This assessment will secure CI/CD pipelines, implement automated security testing, and establish secure development practices.",
+      "why_matters": [
+        "Shift-Left Security: Early security integration prevents costly vulnerabilities in production systems",
+        "Development Speed: Automated security testing enables rapid development without compromising security",
+        "Compliance Requirements: Software development must meet security standards and regulatory requirements"
+      ],
+      "cost_components": [
+        { "component": "DevSecOps Assessment & Planning", "min": 125000, "max": 250000 },
+        { "component": "CI/CD Security Integration", "min": 200000, "max": 400000 },
+        { "component": "Automated Security Testing", "min": 125000, "max": 250000 },
+        { "component": "Secure Development Training", "min": 50000, "max": 100000 }
+      ],
+      "next_steps": [
+        "Assess current development and deployment processes",
+        "Integrate security tools into CI/CD pipelines",
+        "Implement automated security testing and scanning",
+        "Train development teams on secure coding practices"
+      ]
+    },
+    {
+      "id": "DNSO-052",
+      "title": "Critical Infrastructure Resilience Testing",
+      "sector": "Energy",
+      "subsector": "Power Grid",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 1200000,
+      "roi_max": 2400000,
+      "risk_prevention": "Prevents cascading failures in critical infrastructure that can affect national security and economy",
+      "expertise_tags": ["Infrastructure Resilience", "Grid Security", "Disaster Recovery", "Business Continuity"],
+      "competitive_advantage": "Critical infrastructure construction experience combined with resilience testing and disaster recovery expertise",
+      "urgency_factor": "Climate change and cyber threats increasing risks to critical infrastructure requiring enhanced resilience",
+      "implementation_time": "8-15 months",
+      "target_client_size": "Critical Infrastructure Operators",
+      "geography": "National",
+      "description": "We propose comprehensive critical infrastructure resilience testing designed to evaluate recovery capabilities, identify single points of failure, and enhance disaster recovery procedures. This engagement will strengthen infrastructure resilience against cyber and physical threats.",
+      "why_matters": [
+        "National Security Impact: Critical infrastructure failures can cascade affecting national security and economic stability",
+        "Disaster Recovery: Natural disasters and cyber attacks require robust recovery capabilities to restore operations",
+        "Regulatory Requirements: Critical infrastructure regulations mandate resilience testing and disaster recovery planning"
+      ],
+      "cost_components": [
+        { "component": "Infrastructure Resilience Assessment", "min": 300000, "max": 600000 },
+        { "component": "Disaster Recovery Testing", "min": 400000, "max": 800000 },
+        { "component": "Business Continuity Planning", "min": 300000, "max": 600000 },
+        { "component": "Recovery Capability Enhancement", "min": 200000, "max": 400000 }
+      ],
+      "next_steps": [
+        "Assess current infrastructure resilience capabilities",
+        "Conduct disaster recovery testing and tabletop exercises",
+        "Identify single points of failure and vulnerabilities",
+        "Develop enhanced business continuity and recovery plans"
+      ]
+    },
+    {
+      "id": "DNSO-053",
+      "title": "Blockchain Security Assessment",
+      "sector": "Financial Services",
+      "subsector": "Fintech",
+      "client_type": "Financial Services",
+      "priority": "High",
+      "roi_min": 600000,
+      "roi_max": 1200000,
+      "risk_prevention": "Prevents blockchain vulnerabilities that can result in financial losses and smart contract exploits",
+      "expertise_tags": ["Blockchain Security", "Smart Contract Auditing", "DeFi Security", "Consensus Mechanisms"],
+      "competitive_advantage": "Blockchain technology expertise combined with financial services security and audit capabilities",
+      "urgency_factor": "Blockchain adoption accelerating in financial services with insufficient security controls and audit practices",
+      "implementation_time": "4-8 months",
+      "target_client_size": "Blockchain Companies",
+      "geography": "Global",
+      "description": "We propose a comprehensive blockchain security assessment designed to evaluate blockchain implementations, smart contracts, and decentralized finance (DeFi) protocols. This engagement will identify blockchain vulnerabilities and enhance security controls.",
+      "why_matters": [
+        "Smart Contract Vulnerabilities: Flawed smart contracts can result in millions of dollars in losses",
+        "DeFi Security Risks: Decentralized finance protocols face unique security challenges and attack vectors",
+        "Regulatory Compliance: Blockchain financial services must meet regulatory requirements and security standards"
+      ],
+      "cost_components": [
+        { "component": "Blockchain Architecture Security Review", "min": 150000, "max": 300000 },
+        { "component": "Smart Contract Security Auditing", "min": 200000, "max": 400000 },
+        { "component": "DeFi Protocol Security Assessment", "min": 150000, "max": 300000 },
+        { "component": "Blockchain Security Framework", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Assess blockchain architecture and consensus mechanisms",
+        "Conduct smart contract security auditing and testing",
+        "Evaluate DeFi protocol security controls",
+        "Develop blockchain security monitoring and incident response"
+      ]
+    },
+    {
+      "id": "DNSO-054",
+      "title": "AI/ML Security and Privacy Assessment",
+      "sector": "Technology",
+      "subsector": "Artificial Intelligence",
+      "client_type": "Technology",
+      "priority": "High",
+      "roi_min": 800000,
+      "roi_max": 1600000,
+      "risk_prevention": "Prevents AI/ML model attacks and data privacy breaches in machine learning systems",
+      "expertise_tags": ["AI Security", "ML Model Protection", "Data Privacy", "Adversarial Attacks"],
+      "competitive_advantage": "AI/ML development expertise combined with security and privacy protection capabilities",
+      "urgency_factor": "AI/ML systems increasingly targeted by adversarial attacks requiring specialized security controls",
+      "implementation_time": "6-10 months",
+      "target_client_size": "AI/ML Companies",
+      "geography": "Global",
+      "description": "We propose a comprehensive AI/ML security and privacy assessment designed to evaluate machine learning model security, data protection, and adversarial attack resilience. This engagement will enhance AI/ML system security and privacy controls.",
+      "why_matters": [
+        "Model Protection: AI/ML models represent significant intellectual property requiring protection from theft",
+        "Adversarial Attack Resilience: Machine learning systems vulnerable to adversarial attacks that can manipulate outputs",
+        "Data Privacy Compliance: AI/ML systems must comply with privacy regulations and protect sensitive training data"
+      ],
+      "cost_components": [
+        { "component": "AI/ML Security Assessment", "min": 200000, "max": 400000 },
+        { "component": "Adversarial Attack Testing", "min": 250000, "max": 500000 },
+        { "component": "Data Privacy & Protection Review", "min": 200000, "max": 400000 },
+        { "component": "AI Security Framework Development", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Assess AI/ML model security and protection controls",
+        "Conduct adversarial attack testing and resilience evaluation",
+        "Evaluate data privacy and protection mechanisms",
+        "Develop AI/ML security monitoring and incident response"
+      ]
+    },
+    {
+      "id": "DNSO-055",
+      "title": "Satellite Communication Security Assessment",
+      "sector": "Aerospace",
+      "subsector": "Satellite Communications",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 1100000,
+      "roi_max": 2200000,
+      "risk_prevention": "Prevents satellite communication attacks that can disrupt military operations and national security",
+      "expertise_tags": ["Satellite Security", "Space Communications", "Military Communications", "Signal Intelligence"],
+      "competitive_advantage": "Aerospace and defense expertise combined with satellite communication security and signal analysis capabilities",
+      "urgency_factor": "Satellite communications increasingly targeted by nation-state actors requiring enhanced security controls",
+      "implementation_time": "10-18 months",
+      "target_client_size": "Defense Contractors",
+      "geography": "United States",
+      "description": "We propose a specialized satellite communication security assessment designed to evaluate security controls in satellite systems, ground stations, and military communications. This engagement will enhance satellite communication security and resilience.",
+      "why_matters": [
+        "Military Communication Security: Satellite communications critical for military operations and national defense",
+        "Space-Based Asset Protection: Satellite systems represent billions in investment requiring security protection",
+        "Signal Intelligence Threats: Adversaries increasingly capable of intercepting and disrupting satellite communications"
+      ],
+      "cost_components": [
+        { "component": "Satellite System Security Assessment", "min": 300000, "max": 600000 },
+        { "component": "Ground Station Security Review", "min": 350000, "max": 700000 },
+        { "component": "Communication Protocol Analysis", "min": 250000, "max": 500000 },
+        { "component": "Space Communication Security Framework", "min": 200000, "max": 400000 }
+      ],
+      "next_steps": [
+        "Assess satellite system security architecture",
+        "Evaluate ground station security controls",
+        "Analyze communication protocols and encryption",
+        "Develop space communication security monitoring"
+      ]
+    }
+ ,
+ {
       "id": "DNSO-026",
       "title": "LNG Terminal Security for Medical Gas Supply",
       "sector": "Energy",
