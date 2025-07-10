@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { dnsoData, generateStats } from '../data/dnso-data';
 import StatsDashboard from '../components/StatsDashboard';
+import ExportButton from '../components/ExportButton';
+import CompareModal from '../components/CompareModal';
 import { 
   Search, 
   Filter, 
@@ -83,6 +85,7 @@ export default function StrategyVault() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedDNSOs, setSelectedDNSOs] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'roi' | 'priority' | 'sector'>('roi');
+  const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
   
   // Filters
   const [searchTerm, setSearchTerm] = useState('');
@@ -268,10 +271,18 @@ export default function StrategyVault() {
                 <BarChart3 className="w-4 h-4 mr-2" />
                 {currentView === 'dashboard' ? 'Portfolio' : 'Dashboard'}
               </button>
-              <button className="btn-secondary">
-                <FileText className="w-4 h-4 mr-2" />
-                Export Report
-              </button>
+              <ExportButton
+                selectedDNSOs={dnsos.map(d => d.id)}
+                dnsos={dnsos}
+                onExportComplete={(success, fileName) => {
+                  if (success) {
+                    alert(`Portfolio report exported successfully: ${fileName}`);
+                  } else {
+                    alert('Export failed. Please try again.');
+                  }
+                }}
+                className="btn-secondary"
+              />
               <button className="btn-executive">
                 <Plus className="w-4 h-4 mr-2" />
                 New Analysis
@@ -289,8 +300,35 @@ export default function StrategyVault() {
             stats={stats} 
             loading={loading}
             onExport={() => {
-              console.log('Exporting dashboard data...');
-              alert('Dashboard export functionality will be implemented');
+              // Export analytics dashboard data
+              const dashboardData = {
+                timestamp: new Date().toISOString(),
+                type: 'Dashboard Analytics Export',
+                stats: stats,
+                summary: {
+                  total_dnsos: stats.total_dnsos,
+                  total_roi_potential: stats.total_roi_potential,
+                  sectors_covered: stats.sectors_covered,
+                  average_roi: stats.average_roi,
+                  sector_breakdown: stats.sector_breakdown,
+                  priority_breakdown: stats.priority_breakdown
+                },
+                generated_by: 'StrategyVault Executive Dashboard'
+              };
+              
+              // Generate analytics report
+              const fileName = `Dashboard_Analytics_${new Date().toISOString().split('T')[0]}.json`;
+              const blob = new Blob([JSON.stringify(dashboardData, null, 2)], { type: 'application/json' });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = fileName;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+              
+              alert(`Dashboard analytics exported successfully: ${fileName}`);
             }}
             onRefresh={() => {
               setLoading(true);
@@ -503,28 +541,24 @@ export default function StrategyVault() {
               </div>
 
               <div className="flex items-center space-x-2">
-                <button 
-                  disabled={selectedDNSOs.length === 0}
-                  className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
-                  onClick={() => {
-                    if (selectedDNSOs.length > 0) {
-                      // Funcionalidad de exportar
-                      console.log('Exporting DNSOs:', selectedDNSOs);
-                      alert(`Exporting ${selectedDNSOs.length} DNSO(s)`);
+                <ExportButton 
+                  selectedDNSOs={selectedDNSOs}
+                  dnsos={dnsos}
+                  onExportComplete={(success, fileName) => {
+                    if (success) {
+                      console.log('Export completed successfully:', fileName);
+                    } else {
+                      console.log('Export failed');
                     }
                   }}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Export ({selectedDNSOs.length})
-                </button>
+                  disabled={selectedDNSOs.length === 0}
+                />
                 <button 
                   disabled={selectedDNSOs.length < 2 || selectedDNSOs.length > 3}
                   className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={() => {
                     if (selectedDNSOs.length >= 2 && selectedDNSOs.length <= 3) {
-                      // Funcionalidad de comparar
-                      console.log('Comparing DNSOs:', selectedDNSOs);
-                      alert(`Comparing ${selectedDNSOs.length} DNSO(s)`);
+                      setIsCompareModalOpen(true);
                     }
                   }}
                 >
@@ -606,10 +640,18 @@ export default function StrategyVault() {
                       <Eye className="w-4 h-4 mr-2 inline" />
                       View Details
                     </button>
-                    <button className="flex-1 btn-secondary text-sm font-medium">
-                      <FileText className="w-4 h-4 mr-2 inline" />
-                      Generate
-                    </button>
+                    <ExportButton
+                      selectedDNSOs={[dnso.id]}
+                      dnsos={[dnso]}
+                      onExportComplete={(success, fileName) => {
+                        if (success) {
+                          alert(`Report generated successfully: ${fileName}`);
+                        } else {
+                          alert('Report generation failed. Please try again.');
+                        }
+                      }}
+                      className="flex-1 btn-secondary text-sm font-medium"
+                    />
                     <div className="flex items-center">
                       <input
                         type="checkbox"
@@ -641,6 +683,16 @@ export default function StrategyVault() {
         </div>
       </div>
       )}
+
+      {/* Compare Modal */}
+      <CompareModal
+        isOpen={isCompareModalOpen}
+        onClose={() => setIsCompareModalOpen(false)}
+        dnsos={dnsos.filter(dnso => selectedDNSOs.includes(dnso.id))}
+        onExport={(comparedDNSOs) => {
+          console.log('Comparison exported for:', comparedDNSOs.map(d => d.title));
+        }}
+      />
     </div>
   );
 }

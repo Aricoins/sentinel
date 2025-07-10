@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import ProposalExportButton from '../../../components/ProposalExportButton';
 import { 
   ArrowLeft,
   ChevronRight,
@@ -568,10 +569,17 @@ export default function DNSODetailClient({ dnso, relatedDNSOs }: DNSODetailClien
               <div className="executive-card shadow-executive p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Executive Actions</h3>
                 <div className="space-y-4">
-                  <button className="btn-executive w-full">
-                    <FileText className="w-5 h-5 mr-3" />
-                    Generate Proposal
-                  </button>
+                  <ProposalExportButton
+                    dnso={dnso}
+                    onExportComplete={(success, fileName) => {
+                      if (success) {
+                        alert(`Proposal generated successfully: ${fileName}`);
+                      } else {
+                        alert('Proposal generation failed. Please try again.');
+                      }
+                    }}
+                    className="w-full"
+                  />
                   <button className="btn-secondary w-full">
                     <Share2 className="w-5 h-5 mr-3" />
                     Share DNSO
