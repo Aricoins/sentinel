@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "StrategyVault - Strategic Opportunity Management",
   description: "Enterprise-grade DNSO (Discover New Service Opportunities) management platform. McKinsey/BCG-inspired strategic planning tools for executives and consultants.",
   icons: {
-    icon: process.env.NODE_ENV === 'production' ? '/sentinel/favicon.ico' : '/favicon.ico',
+    icon: "data:image/x-icon;base64,AAABAAEAEBAAAAEAGAAwAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAD////////////////////////////////////////////////////////////////////////////////////////2gjv2gjv2gjv2gjv2gjv////////////////////////////////////2gjv2gjv2gjv2gjv2gjv2gjv2gjv2gjuKOh7///////////////////////+KOh72gjv2gjv2gjv2gjv2gjv2gjv2gjv2gjuKOh6KOh7///////////////+KOh6KOh72gjv2gjv2gjv2gjv2gjv2gjv2gjv2gjuKOh6KOh6KOh7///////////+KOh6KOh72gjv2gjv2gjv2gjv2gjv2gjv2gjv2gjuKOh6KOh6KOh7///////+KOh6KOh78+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+viKOh6KOh6KOh7///+KOh6KOh78+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+viKOh6KOh6KOh7///+KOh6KOh78+vj8+vjw6OLw6OLw6OLw6OLw6OLw6OL8+vj8+viKOh6KOh6KOh7///+KOh6KOh78+vj8+vjw6OLw6OLw6OLw6OLw6OLw6OL8+vj8+viKOh6KOh6KOh7///+KOh6KOh78+vj8+vjw6OLw6OLw6OLw6OLw6OLw6OL8+vj8+viKOh6KOh6KOh7///////+KOh78+vj8+vjw6OLw6OLw6OLw6OLw6OLw6OL8+vj8+viKOh6KOh7///////////+KOh78+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+viKOh6KOh7////////////////8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+vj8+viKOh7///////////////////////+KOh6KOh6KOh6KOh6KOh6KOh6KOh6KOh6KOh7///////////////////////////////////+KOh6KOh6KOh6KOh6KOh7///////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
   },
 };
 
@@ -27,12 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta 
-          httpEquiv="Content-Security-Policy" 
-          content="default-src 'self'; img-src 'self' data: https://aricoins.github.io; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' https://fonts.gstatic.com;"
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
