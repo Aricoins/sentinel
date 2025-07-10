@@ -349,6 +349,357 @@ export const dnsoData = {
         "Ambulance response optimization"
       ]
           },
+    {
+      "id": "DNSO-036",
+      "title": "Industrial Control Systems Penetration Testing",
+      "sector": "Energy",
+      "subsector": "Critical Infrastructure",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 850000,
+      "roi_max": 1700000,
+      "risk_prevention": "Prevents catastrophic OT/ICS breaches affecting power generation and distribution",
+      "expertise_tags": ["ICS/SCADA Security", "OT Penetration Testing", "Critical Infrastructure", "Industrial Cybersecurity"],
+      "competitive_advantage": "Deep expertise in industrial control systems across power plants, refineries, and critical infrastructure we've built",
+      "urgency_factor": "Nation-state actors increasingly targeting industrial control systems in critical infrastructure",
+      "implementation_time": "6-12 months",
+      "target_client_size": "Energy Companies and Utilities",
+      "geography": "Global",
+      "description": "We propose a comprehensive ICS/SCADA penetration testing engagement designed to uncover vulnerabilities across operational technology networks, industrial control systems, and critical infrastructure components. This assessment will provide actionable insights to strengthen defenses, reduce breach risk, and support regulatory compliance.",
+      "why_matters": [
+        "Critical Infrastructure Protection: ICS breaches can cause widespread power outages affecting millions of people",
+        "Nation-State Threat Landscape: Advanced persistent threats specifically target industrial control systems",
+        "Regulatory Compliance Requirements: NERC CIP and other standards mandate regular ICS security assessments"
+      ],
+      "cost_components": [
+        { "component": "ICS/SCADA Security Assessment", "min": 200000, "max": 400000 },
+        { "component": "OT Network Penetration Testing", "min": 300000, "max": 600000 },
+        { "component": "Industrial Protocol Analysis", "min": 200000, "max": 400000 },
+        { "component": "Compliance Reporting & Remediation", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Conduct preliminary ICS network discovery and mapping",
+        "Develop comprehensive OT penetration testing methodology",
+        "Coordinate with operations teams for safe testing windows",
+        "Deliver prioritized remediation roadmap"
+      ]
+    },
+    {
+      "id": "DNSO-037",
+      "title": "Cloud Security Architecture Assessment",
+      "sector": "Technology",
+      "subsector": "Cloud Infrastructure",
+      "client_type": "Healthcare",
+      "priority": "High",
+      "roi_min": 600000,
+      "roi_max": 1200000,
+      "risk_prevention": "Prevents cloud misconfigurations and data breaches in healthcare cloud environments",
+      "expertise_tags": ["Cloud Security", "HIPAA Compliance", "Multi-Cloud Assessment", "Container Security"],
+      "competitive_advantage": "Extensive experience securing cloud infrastructure for healthcare organizations with strict compliance requirements",
+      "urgency_factor": "Healthcare cloud adoption accelerating without proper security controls, creating massive compliance risks",
+      "implementation_time": "4-8 months",
+      "target_client_size": "Healthcare Organizations",
+      "geography": "North America",
+      "description": "We propose a tailored cloud security assessment for healthcare organizations, designed to evaluate security posture across AWS, Azure, and GCP environments. This comprehensive review will identify misconfigurations, compliance gaps, and provide actionable remediation guidance.",
+      "why_matters": [
+        "HIPAA Compliance Critical: Cloud misconfigurations can expose patient data leading to massive fines",
+        "Multi-Cloud Complexity: Healthcare organizations struggle with consistent security across multiple cloud providers",
+        "Rapid Cloud Adoption: Healthcare cloud migration often bypasses security reviews creating vulnerabilities"
+      ],
+      "cost_components": [
+        { "component": "Multi-Cloud Security Assessment", "min": 150000, "max": 300000 },
+        { "component": "HIPAA Compliance Review", "min": 200000, "max": 400000 },
+        { "component": "Container & Kubernetes Security", "min": 150000, "max": 300000 },
+        { "component": "Cloud Security Architecture Design", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Inventory all cloud environments and workloads",
+        "Conduct automated security configuration scanning",
+        "Perform HIPAA compliance gap analysis",
+        "Develop cloud security roadmap and implementation plan"
+      ]
+    },
+    {
+      "id": "DNSO-038",
+      "title": "Supply Chain Cybersecurity Assessment",
+      "sector": "Manufacturing",
+      "subsector": "Supply Chain",
+      "client_type": "Manufacturing",
+      "priority": "Critical",
+      "roi_min": 750000,
+      "roi_max": 1500000,
+      "risk_prevention": "Prevents supply chain cyber attacks that can halt manufacturing operations globally",
+      "expertise_tags": ["Supply Chain Security", "Third-Party Risk", "Vendor Assessment", "Manufacturing Security"],
+      "competitive_advantage": "Unique understanding of manufacturing supply chains and industrial processes from our construction projects",
+      "urgency_factor": "Supply chain attacks like SolarWinds demonstrate devastating impact on manufacturing operations",
+      "implementation_time": "6-10 months",
+      "target_client_size": "Manufacturing Companies",
+      "geography": "Global",
+      "description": "We propose a comprehensive supply chain cybersecurity assessment designed to evaluate third-party risks, vendor security controls, and supply chain vulnerabilities. This engagement will provide actionable insights to strengthen supplier security and reduce supply chain attack risks.",
+      "why_matters": [
+        "Third-Party Risk Exposure: 60% of data breaches involve third-party vendors in manufacturing supply chains",
+        "Manufacturing Disruption: Supply chain attacks can halt production lines causing millions in losses",
+        "Regulatory Requirements: Increasing compliance mandates for supply chain security across industries"
+      ],
+      "cost_components": [
+        { "component": "Supply Chain Risk Assessment", "min": 200000, "max": 400000 },
+        { "component": "Vendor Security Evaluation", "min": 250000, "max": 500000 },
+        { "component": "Manufacturing Process Security Review", "min": 200000, "max": 400000 },
+        { "component": "Supply Chain Security Program Development", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Map complete supply chain and identify critical vendors",
+        "Conduct security assessments of top-tier suppliers",
+        "Evaluate manufacturing process integration security",
+        "Develop supply chain security monitoring program"
+      ]
+    },
+    {
+      "id": "DNSO-039",
+      "title": "Financial Services API Security Testing",
+      "sector": "Financial Services",
+      "subsector": "Digital Banking",
+      "client_type": "Financial Services",
+      "priority": "Critical",
+      "roi_min": 900000,
+      "roi_max": 1800000,
+      "risk_prevention": "Prevents API vulnerabilities that could expose customer financial data and banking systems",
+      "expertise_tags": ["API Security", "Financial Services", "Open Banking", "PCI DSS Compliance"],
+      "competitive_advantage": "Deep expertise in financial technology security from our fintech infrastructure projects",
+      "urgency_factor": "Open banking and API economy creating massive attack surface in financial services",
+      "implementation_time": "4-8 months",
+      "target_client_size": "Banks and Financial Institutions",
+      "geography": "Global",
+      "description": "We propose a specialized API security testing engagement for financial services, designed to identify vulnerabilities in banking APIs, payment systems, and open banking integrations. This assessment will ensure API security controls meet PCI DSS and regulatory requirements.",
+      "why_matters": [
+        "Financial Data Protection: API vulnerabilities can expose customer financial data and payment information",
+        "Open Banking Security: New banking APIs create attack vectors requiring specialized security testing",
+        "Regulatory Compliance: PCI DSS and banking regulations mandate robust API security controls"
+      ],
+      "cost_components": [
+        { "component": "Banking API Security Assessment", "min": 250000, "max": 500000 },
+        { "component": "Payment System Penetration Testing", "min": 300000, "max": 600000 },
+        { "component": "Open Banking Security Review", "min": 200000, "max": 400000 },
+        { "component": "PCI DSS Compliance Validation", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Inventory all banking APIs and integrations",
+        "Conduct automated API security scanning",
+        "Perform manual penetration testing of critical APIs",
+        "Validate PCI DSS compliance across payment systems"
+      ]
+    },
+    {
+      "id": "DNSO-040",
+      "title": "Ransomware Readiness Assessment",
+      "sector": "Healthcare",
+      "subsector": "Hospital Operations",
+      "client_type": "Healthcare",
+      "priority": "Critical",
+      "roi_min": 500000,
+      "roi_max": 1000000,
+      "risk_prevention": "Prevents ransomware attacks that can shut down hospital operations and endanger patients",
+      "expertise_tags": ["Ransomware Defense", "Incident Response", "Healthcare Security", "Business Continuity"],
+      "competitive_advantage": "Healthcare-specific ransomware expertise understanding critical patient care systems and medical devices",
+      "urgency_factor": "Healthcare ransomware attacks increasing 200% year-over-year with devastating patient impact",
+      "implementation_time": "3-6 months",
+      "target_client_size": "Hospitals and Health Systems",
+      "geography": "North America",
+      "description": "We propose a comprehensive ransomware readiness assessment designed to evaluate preparedness across technical defenses, incident response capabilities, and business continuity planning. This engagement will strengthen resilience against ransomware attacks targeting healthcare operations.",
+      "why_matters": [
+        "Patient Safety Impact: Ransomware can disable life support systems and delay critical medical procedures",
+        "Healthcare Targeting: Hospitals specifically targeted due to critical nature and willingness to pay ransoms",
+        "Operational Continuity: Ransomware attacks can shut down entire hospital systems affecting patient care"
+      ],
+      "cost_components": [
+        { "component": "Ransomware Defense Assessment", "min": 125000, "max": 250000 },
+        { "component": "Incident Response Planning", "min": 150000, "max": 300000 },
+        { "component": "Business Continuity Testing", "min": 125000, "max": 250000 },
+        { "component": "Ransomware Simulation Exercise", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Assess current ransomware defenses and backup systems",
+        "Evaluate incident response procedures and capabilities",
+        "Test business continuity and disaster recovery plans",
+        "Conduct tabletop ransomware simulation exercise"
+      ]
+    },
+    {
+      "id": "DNSO-041",
+      "title": "IoT Device Security Assessment",
+      "sector": "Manufacturing",
+      "subsector": "Smart Manufacturing",
+      "client_type": "Manufacturing",
+      "priority": "High",
+      "roi_min": 400000,
+      "roi_max": 800000,
+      "risk_prevention": "Prevents IoT device vulnerabilities from compromising manufacturing operations and data",
+      "expertise_tags": ["IoT Security", "Industrial IoT", "Device Security", "Smart Manufacturing"],
+      "competitive_advantage": "Extensive experience with IoT implementations in industrial and manufacturing environments",
+      "urgency_factor": "Manufacturing IoT adoption creating massive attack surface with insufficient security controls",
+      "implementation_time": "4-8 months",
+      "target_client_size": "Manufacturing Companies",
+      "geography": "Global",
+      "description": "We propose a comprehensive IoT security assessment for manufacturing environments, designed to identify vulnerabilities in connected devices, industrial sensors, and smart manufacturing systems. This evaluation will provide actionable security recommendations for IoT deployments.",
+      "why_matters": [
+        "Manufacturing Disruption: Compromised IoT devices can halt production lines and damage equipment",
+        "Data Exfiltration Risk: IoT devices can provide attackers access to sensitive manufacturing data",
+        "Scalability Challenges: Large-scale IoT deployments create management and security complexities"
+      ],
+      "cost_components": [
+        { "component": "IoT Device Inventory & Assessment", "min": 100000, "max": 200000 },
+        { "component": "Industrial IoT Security Testing", "min": 150000, "max": 300000 },
+        { "component": "IoT Network Security Review", "min": 100000, "max": 200000 },
+        { "component": "IoT Security Framework Development", "min": 50000, "max": 100000 }
+      ],
+      "next_steps": [
+        "Inventory all IoT devices and connected systems",
+        "Conduct security testing of representative device samples",
+        "Evaluate IoT network segmentation and monitoring",
+        "Develop IoT security management framework"
+      ]
+    },
+    {
+      "id": "DNSO-042",
+      "title": "Zero Trust Architecture Implementation",
+      "sector": "Government/Defense",
+      "subsector": "Federal Agencies",
+      "client_type": "Government",
+      "priority": "Critical",
+      "roi_min": 1200000,
+      "roi_max": 2400000,
+      "risk_prevention": "Implements zero trust security model to prevent insider threats and advanced persistent threats",
+      "expertise_tags": ["Zero Trust", "Identity Management", "Network Security", "Federal Compliance"],
+      "competitive_advantage": "Experience implementing zero trust architectures for government and defense contractors",
+      "urgency_factor": "Federal zero trust mandate requires agencies to implement zero trust architecture by 2024",
+      "implementation_time": "12-18 months",
+      "target_client_size": "Federal Agencies",
+      "geography": "United States",
+      "description": "We propose a comprehensive zero trust architecture implementation designed to meet federal mandates and enhance security posture. This engagement will evaluate current infrastructure, design zero trust architecture, and implement identity-based security controls across the organization.",
+      "why_matters": [
+        "Federal Mandate Compliance: Executive Order 14028 requires federal agencies to implement zero trust architecture",
+        "Advanced Threat Protection: Zero trust model provides enhanced protection against sophisticated adversaries",
+        "Insider Threat Mitigation: Zero trust principles reduce risks from compromised credentials and insider threats"
+      ],
+      "cost_components": [
+        { "component": "Zero Trust Architecture Assessment", "min": 300000, "max": 600000 },
+        { "component": "Identity & Access Management Implementation", "min": 400000, "max": 800000 },
+        { "component": "Network Segmentation & Monitoring", "min": 300000, "max": 600000 },
+        { "component": "Federal Compliance Validation", "min": 200000, "max": 400000 }
+      ],
+      "next_steps": [
+        "Assess current identity and access management systems",
+        "Design zero trust architecture roadmap",
+        "Implement pilot zero trust controls",
+        "Scale zero trust implementation across organization"
+      ]
+    },
+    {
+      "id": "DNSO-043",
+      "title": "Automotive Cybersecurity Testing",
+      "sector": "Automotive",
+      "subsector": "Connected Vehicles",
+      "client_type": "Manufacturing",
+      "priority": "High",
+      "roi_min": 700000,
+      "roi_max": 1400000,
+      "risk_prevention": "Prevents vehicle cybersecurity vulnerabilities that could affect driver safety and brand reputation",
+      "expertise_tags": ["Automotive Security", "Connected Vehicle Testing", "ECU Security", "V2X Security"],
+      "competitive_advantage": "Automotive manufacturing expertise combined with cybersecurity testing capabilities",
+      "urgency_factor": "Connected and autonomous vehicles creating new attack vectors requiring specialized security testing",
+      "implementation_time": "6-12 months",
+      "target_client_size": "Automotive Manufacturers",
+      "geography": "Global",
+      "description": "We propose specialized automotive cybersecurity testing designed to evaluate security controls in connected vehicles, electronic control units, and vehicle-to-everything (V2X) communications. This assessment will ensure automotive cybersecurity compliance and safety standards.",
+      "why_matters": [
+        "Driver Safety Critical: Vehicle cybersecurity vulnerabilities can directly impact driver and passenger safety",
+        "Regulatory Compliance: UN WP.29 and other automotive cybersecurity regulations require security testing",
+        "Brand Protection: Automotive cybersecurity incidents can cause massive recalls and reputation damage"
+      ],
+      "cost_components": [
+        { "component": "ECU Security Testing", "min": 200000, "max": 400000 },
+        { "component": "Connected Vehicle Assessment", "min": 250000, "max": 500000 },
+        { "component": "V2X Communication Security", "min": 150000, "max": 300000 },
+        { "component": "Automotive Compliance Validation", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Inventory vehicle electronic systems and connectivity",
+        "Conduct ECU security testing and analysis",
+        "Evaluate V2X and telematics security controls",
+        "Validate compliance with automotive cybersecurity standards"
+      ]
+    },
+    {
+      "id": "DNSO-044",
+      "title": "Data Center Physical Security Integration",
+      "sector": "Technology",
+      "subsector": "Data Centers",
+      "client_type": "Technology",
+      "priority": "High",
+      "roi_min": 600000,
+      "roi_max": 1200000,
+      "risk_prevention": "Prevents physical security breaches that bypass cybersecurity controls in data centers",
+      "expertise_tags": ["Physical Security", "Data Center Security", "Facility Security", "Access Control"],
+      "competitive_advantage": "Data center construction experience combined with integrated physical-cyber security expertise",
+      "urgency_factor": "Data centers vulnerable to physical attacks that can bypass sophisticated cybersecurity measures",
+      "implementation_time": "4-8 months",
+      "target_client_size": "Data Center Operators",
+      "geography": "Global",
+      "description": "We propose a comprehensive physical security assessment for data centers, designed to evaluate physical access controls, environmental security, and integration with cybersecurity systems. This engagement will identify physical vulnerabilities and enhance overall security posture.",
+      "why_matters": [
+        "Physical Access Risk: Physical access to data centers can bypass all cybersecurity controls",
+        "Critical Infrastructure Protection: Data centers house critical infrastructure requiring maximum security",
+        "Compliance Requirements: SOC 2, ISO 27001, and other standards mandate physical security controls"
+      ],
+      "cost_components": [
+        { "component": "Physical Security Assessment", "min": 150000, "max": 300000 },
+        { "component": "Access Control System Review", "min": 200000, "max": 400000 },
+        { "component": "Environmental Security Analysis", "min": 150000, "max": 300000 },
+        { "component": "Physical-Cyber Security Integration", "min": 100000, "max": 200000 }
+      ],
+      "next_steps": [
+        "Assess current physical security controls and access systems",
+        "Evaluate environmental monitoring and security systems",
+        "Test physical penetration scenarios and social engineering",
+        "Integrate physical security with cybersecurity monitoring"
+      ]
+    },
+    {
+      "id": "DNSO-045",
+      "title": "Cryptocurrency Exchange Security Assessment",
+      "sector": "Financial Services",
+      "subsector": "Cryptocurrency",
+      "client_type": "Financial Services",
+      "priority": "Critical",
+      "roi_min": 800000,
+      "roi_max": 1600000,
+      "risk_prevention": "Prevents cryptocurrency exchange hacks that can result in massive financial losses",
+      "expertise_tags": ["Cryptocurrency Security", "Exchange Security", "Blockchain Security", "Digital Asset Protection"],
+      "competitive_advantage": "Financial technology expertise combined with emerging cryptocurrency and blockchain security knowledge",
+      "urgency_factor": "Cryptocurrency exchange hacks causing billions in losses, regulatory scrutiny increasing",
+      "implementation_time": "6-10 months",
+      "target_client_size": "Cryptocurrency Exchanges",
+      "geography": "Global",
+      "description": "We propose a specialized cryptocurrency exchange security assessment designed to evaluate trading platform security, wallet protection, and blockchain integration security. This comprehensive review will identify vulnerabilities and enhance digital asset protection.",
+      "why_matters": [
+        "Financial Loss Prevention: Exchange hacks have resulted in billions of dollars in cryptocurrency theft",
+        "Regulatory Compliance: Increasing cryptocurrency regulations require enhanced security controls",
+        "Customer Trust: Security breaches can destroy customer confidence and exchange reputation"
+      ],
+      "cost_components": [
+        { "component": "Exchange Platform Security Testing", "min": 250000, "max": 500000 },
+        { "component": "Cryptocurrency Wallet Assessment", "min": 200000, "max": 400000 },
+        { "component": "Blockchain Integration Security", "min": 200000, "max": 400000 },
+        { "component": "Digital Asset Protection Framework", "min": 150000, "max": 300000 }
+      ],
+      "next_steps": [
+        "Assess trading platform and API security controls",
+        "Evaluate cryptocurrency wallet and key management",
+        "Test blockchain integration and smart contract security",
+        "Develop digital asset protection strategy"
+      ]
+    }
+ ,
       // ENERGY SECTOR - Leveraging oil/gas, renewable, nuclear expertise
       {
         "id": "DNSO-001",
