@@ -990,6 +990,7 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
 
   return (
     <div 
+      className="modal-container"
       style={{
         position: 'fixed',
         top: 0,
@@ -999,50 +1000,56 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
         backgroundColor: 'rgba(0, 0, 0, 0.75)',
         zIndex: 999999,
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: '20px',
-        overflowY: 'auto'
+        padding: '10px',
+        overflowY: 'auto',
+        // Ensure modal is scrollable on small screens
+        WebkitOverflowScrolling: 'touch'
       }}
       onClick={handleClose}
     >
       <div 
+        className="modal-content"
         style={{
           backgroundColor: 'white',
           borderRadius: '16px',
           padding: '0',
-          maxWidth: '95vw',
-          maxHeight: '95vh',
           overflow: 'hidden',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
           position: 'relative',
           zIndex: 1000000,
-          width: '1200px',
-          minHeight: '600px'
+          width: '100%',
+          maxWidth: '1200px',
+          maxHeight: '95vh',
+          minHeight: '600px',
+          // Responsive adjustments
+          marginTop: '20px',
+          marginBottom: '20px'
         }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div style={{ 
           background: 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)',
-          padding: '24px 32px',
+          padding: '16px 20px',
           borderTopLeftRadius: '16px',
           borderTopRightRadius: '16px',
           position: 'relative'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
+            <div style={{ flexGrow: 1, marginRight: '16px' }}>
               <h2 style={{ 
-                fontSize: '28px', 
+                fontSize: 'clamp(20px, 4vw, 28px)', 
                 fontWeight: 'bold', 
                 color: 'white',
                 margin: '0 0 8px 0'
               }}>
-                🚀 StrategyVault
+                🚀 OpportunityForge
               </h2>
               <p style={{ 
                 color: 'rgba(255, 255, 255, 0.9)', 
-                fontSize: '16px',
+                fontSize: 'clamp(12px, 3vw, 16px)',
                 margin: '0'
               }}>
                 Create strategic analysis for your clients
@@ -1061,7 +1068,8 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                flexShrink: 0
               }}
             >
               ×
@@ -1070,13 +1078,13 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
         </div>
 
         {/* Progress Bar */}
-        <div style={{ padding: '24px 32px', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ padding: '16px 20px', borderBottom: '1px solid #e5e7eb' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
             {[1, 2, 3].map((step) => (
               <div key={step} style={{ display: 'flex', alignItems: 'center' }}>
                 <div style={{
-                  width: '40px',
-                  height: '40px',
+                  width: 'clamp(32px, 6vw, 40px)',
+                  height: 'clamp(32px, 6vw, 40px)',
                   borderRadius: '50%',
                   backgroundColor: step <= currentStep ? '#3b82f6' : '#e5e7eb',
                   color: step <= currentStep ? 'white' : '#9ca3af',
@@ -1117,23 +1125,26 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
 
         {/* Content */}
         <div style={{ 
-          padding: '32px',
-          maxHeight: 'calc(95vh - 300px)',
-          overflowY: 'auto'
+          padding: 'clamp(16px, 4vw, 32px)',
+          maxHeight: 'calc(95vh - 280px)',
+          overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch'
         }}>
           {renderStepContent()}
         </div>
 
         {/* Footer */}
         <div style={{ 
-          padding: '24px 32px',
+          padding: '16px 20px',
           borderTop: '1px solid #e5e7eb',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          backgroundColor: '#f9fafb'
+          backgroundColor: '#f9fafb',
+          flexWrap: 'wrap',
+          gap: '12px'
         }}>
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '8px' }}>
             {currentStep > 1 && (
               <button
                 onClick={handleBack}
@@ -1141,12 +1152,12 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '12px 20px',
+                  padding: '10px 16px',
                   backgroundColor: '#f3f4f6',
                   color: '#374151',
                   border: 'none',
                   borderRadius: '8px',
-                  fontSize: '14px',
+                  fontSize: 'clamp(12px, 2.5vw, 14px)',
                   fontWeight: '500',
                   cursor: 'pointer'
                 }}
@@ -1156,19 +1167,19 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
             )}
           </div>
 
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
             <button
               onClick={handleSaveDraft}
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '12px 20px',
+                padding: '10px 16px',
                 backgroundColor: '#f3f4f6',
                 color: '#374151',
                 border: 'none',
                 borderRadius: '8px',
-                fontSize: '14px',
+                fontSize: 'clamp(12px, 2.5vw, 14px)',
                 fontWeight: '500',
                 cursor: 'pointer'
               }}
@@ -1183,12 +1194,12 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '12px 20px',
+                  padding: '10px 16px',
                   backgroundColor: '#dbeafe',
                   color: '#1e40af',
                   border: 'none',
                   borderRadius: '8px',
-                  fontSize: '14px',
+                  fontSize: 'clamp(12px, 2.5vw, 14px)',
                   fontWeight: '500',
                   cursor: 'pointer'
                 }}
@@ -1204,12 +1215,12 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '12px 24px',
+                  padding: '10px 20px',
                   backgroundColor: '#3b82f6',
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',
-                  fontSize: '14px',
+                  fontSize: 'clamp(12px, 2.5vw, 14px)',
                   fontWeight: '600',
                   cursor: 'pointer'
                 }}
@@ -1224,12 +1235,12 @@ const NewAnalysisModal: React.FC<NewAnalysisModalProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '12px 24px',
+                  padding: '10px 20px',
                   backgroundColor: isValid ? '#10b981' : '#9ca3af',
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',
-                  fontSize: '14px',
+                  fontSize: 'clamp(12px, 2.5vw, 14px)',
                   fontWeight: '600',
                   cursor: isValid ? 'pointer' : 'not-allowed'
                 }}

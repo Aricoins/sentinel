@@ -1877,3 +1877,218 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #374151;
   }
 }
+
+/* Responsive Modal Styles - OpportunityForge */
+@media (max-width: 768px) {
+  .modal-container {
+    padding: 8px !important;
+    align-items: flex-start !important;
+  }
+  
+  .modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 8px 0 !important;
+    border-radius: 12px !important;
+    max-height: 98vh !important;
+    min-height: auto !important;
+  }
+  
+  .modal-header {
+    padding: 12px 16px !important;
+    border-radius: 12px 12px 0 0 !important;
+  }
+  
+  .modal-header h2 {
+    font-size: 20px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .modal-header p {
+    font-size: 12px !important;
+    display: none; /* Hide subtitle on very small screens */
+  }
+  
+  .modal-progress {
+    padding: 12px 16px !important;
+  }
+  
+  .modal-progress-step {
+    font-size: 12px !important;
+  }
+  
+  .modal-progress-step-circle {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 12px !important;
+  }
+  
+  .modal-content-area {
+    padding: 16px !important;
+    max-height: calc(98vh - 240px) !important;
+  }
+  
+  .modal-footer {
+    padding: 12px 16px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .modal-footer-left,
+  .modal-footer-right {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  .modal-footer button {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    min-width: 80px !important;
+  }
+  
+  /* Step content responsive adjustments */
+  .step-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  .step-content h3 {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .step-content p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Form elements responsive */
+  .form-group {
+    margin-bottom: 12px !important;
+  }
+  
+  .form-label {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+  }
+  
+  /* Grid layouts responsive */
+  .grid-2-col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  .grid-3-col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  /* Cards responsive */
+  .card-small {
+    padding: 12px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .card-small h4 {
+    font-size: 14px !important;
+  }
+  
+  .card-small p {
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    padding: 4px !important;
+  }
+  
+  .modal-content {
+    border-radius: 8px !important;
+    max-height: 99vh !important;
+  }
+  
+  .modal-header {
+    padding: 8px 12px !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+  
+  .modal-header h2 {
+    font-size: 16px !important;
+  }
+  
+  .modal-progress {
+    padding: 8px 12px !important;
+  }
+  
+  .modal-progress-step {
+    font-size: 10px !important;
+  }
+  
+  .modal-progress-step-circle {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 10px !important;
+  }
+  
+  .modal-content-area {
+    padding: 12px !important;
+    max-height: calc(99vh - 200px) !important;
+  }
+  
+  .modal-footer {
+    padding: 8px 12px !important;
+  }
+  
+  .modal-footer button {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    min-width: 70px !important;
+  }
+  
+  .step-content h3 {
+    font-size: 16px !important;
+  }
+  
+  .step-content p {
+    font-size: 11px !important;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .modal-content {
+    max-height: 95vh !important;
+  }
+  
+  .modal-content-area {
+    max-height: calc(95vh - 160px) !important;
+  }
+  
+  .modal-header {
+    padding: 8px 16px !important;
+  }
+  
+  .modal-progress {
+    padding: 8px 16px !important;
+  }
+  
+  .modal-footer {
+    padding: 8px 16px !important;
+  }
+}
