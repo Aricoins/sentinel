@@ -6,6 +6,7 @@ import { dnsoData, generateStats } from '../data/dnso-data';
 import StatsDashboard from '../components/StatsDashboard';
 import ExportButton from '../components/ExportButton';
 import CompareModal from '../components/CompareModal';
+import NewAnalysisModal from '../components/NewAnalysisModal';
 import { 
   Search, 
   Filter, 
@@ -81,11 +82,13 @@ export default function StrategyVault() {
   const [filteredDNSOs, setFilteredDNSOs] = useState<DNSO[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const [currentView, setCurrentView] = useState<'portfolio' | 'dashboard'>('portfolio');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedDNSOs, setSelectedDNSOs] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'roi' | 'priority' | 'sector'>('roi');
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
+  const [isNewAnalysisModalOpen, setIsNewAnalysisModalOpen] = useState(false);
   
   // Filters
   const [searchTerm, setSearchTerm] = useState('');
@@ -98,6 +101,11 @@ export default function StrategyVault() {
   const sectors = ['Energy', 'Chemical/Pharmaceutical', 'Government/Defense', 'Infrastructure', 'Technology'];
   const priorities = ['Critical', 'High', 'Medium'];
   const clientTypes = ['Healthcare', 'Government', 'Manufacturing'];
+
+  // Handle hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Load data
   useEffect(() => {
@@ -127,8 +135,10 @@ export default function StrategyVault() {
       }
     }
     
-    loadData();
-  }, []);
+    if (mounted) {
+      loadData();
+    }
+  }, [mounted]);
 
   // Apply filters
   useEffect(() => {
@@ -181,6 +191,36 @@ export default function StrategyVault() {
     setFilteredDNSOs(filtered);
   }, [dnsos, searchTerm, sectorFilter, priorityFilter, clientTypeFilter, roiRange, sortBy]);
 
+  // Handle new analysis creation
+  const handleCreateAnalysis = (analysis: any) => {
+    console.log('New analysis created:', analysis);
+    
+    // Generate analysis report
+    const fileName = `${analysis.analysisConfig.title.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.json`;
+    const blob = new Blob([JSON.stringify(analysis, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    alert(`Analysis created successfully: ${fileName}`);
+  };
+
+  const handleSaveDraft = (draft: any) => {
+    console.log('Draft saved:', draft);
+    
+    // Save to localStorage for persistence
+    const drafts = JSON.parse(localStorage.getItem('strategyvault_drafts') || '[]');
+    drafts.push(draft);
+    localStorage.setItem('strategyvault_drafts', JSON.stringify(drafts));
+    
+    alert('Analysis draft saved successfully!');
+  };
+
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -219,7 +259,7 @@ export default function StrategyVault() {
     }
   };
 
-  if (loading) {
+  if (!mounted || loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
@@ -231,7 +271,7 @@ export default function StrategyVault() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50" suppressHydrationWarning={true}>
       {/* Header */}
       <header className="nav-executive sticky top-0 z-50 shadow-executive">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -283,7 +323,10 @@ export default function StrategyVault() {
                 }}
                 className="btn-secondary"
               />
-              <button className="btn-executive">
+              <button 
+                className="btn-executive"
+                onClick={() => setIsNewAnalysisModalOpen(true)}
+              >
                 <Plus className="w-4 h-4 mr-2" />
                 New Analysis
               </button>
@@ -402,18 +445,20 @@ export default function StrategyVault() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
           <div className="lg:w-80">
-            <div className="executive-card filter-sidebar p-6 sticky top-24 shadow-executive">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-gray-900">Strategic Filters</h3>
-                <button
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                >
-                  <SlidersHorizontal className="w-5 h-5" />
-                </button>
+            <div className="executive-card filter-sidebar sticky top-24 shadow-executive max-h-[calc(100vh-7rem)] overflow-hidden hover:overflow-y-auto custom-scrollbar transition-all duration-300 hover:shadow-executive-lg" style={{ scrollBehavior: 'smooth' }}>
+              <div className="p-6 pb-2">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-xl font-bold text-gray-900">Strategic Filters</h3>
+                  <button
+                    onClick={() => setShowFilters(!showFilters)}
+                    className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                  >
+                    <SlidersHorizontal className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
 
-              <div className={`space-y-6 ${showFilters ? 'block' : 'hidden lg:block'}`}>
+              <div className={`px-6 pb-6 space-y-6 ${showFilters ? 'block' : 'hidden lg:block'}`}>
                 {/* Search */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
@@ -692,6 +737,15 @@ export default function StrategyVault() {
         onExport={(comparedDNSOs) => {
           console.log('Comparison exported for:', comparedDNSOs.map(d => d.title));
         }}
+      />
+
+      {/* New Analysis Modal */}
+      <NewAnalysisModal
+        isOpen={isNewAnalysisModalOpen}
+        onClose={() => setIsNewAnalysisModalOpen(false)}
+        dnsos={dnsos}
+        onCreateAnalysis={handleCreateAnalysis}
+        onSaveDraft={handleSaveDraft}
       />
     </div>
   );

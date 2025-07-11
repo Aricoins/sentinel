@@ -85,15 +85,20 @@ export default function StatsDashboard({
   onExport,
   onRefresh 
 }: StatsDashboardProps) {
+  const [mounted, setMounted] = useState(false);
   const [selectedView, setSelectedView] = useState<'overview' | 'sectors' | 'priorities' | 'geography'>('overview');
-  const [animationClass, setAnimationClass] = useState('');
+  const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
-    // Trigger animation on data change
-    setAnimationClass('animate-pulse');
-    const timer = setTimeout(() => setAnimationClass(''), 1000);
-    return () => clearTimeout(timer);
-  }, [stats]);
+    setMounted(true);
+  }, []);
+
+  // Trigger animation on data change
+  useEffect(() => {
+    if (mounted) {
+      setAnimationKey(prev => prev + 1);
+    }
+  }, [stats, mounted]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -106,22 +111,23 @@ export default function StatsDashboard({
 
   const getSectorIcon = (sector: string) => {
     switch (sector) {
-      case 'Energy': return <Zap className="w-6 h-6" />;
-      case 'Infrastructure': return <Building2 className="w-6 h-6" />;
-      case 'Government/Defense': return <Shield className="w-6 h-6" />;
-      case 'Technology': return <Target className="w-6 h-6" />;
-      default: return <Building2 className="w-6 h-6" />;
+      case 'Energy': return <Zap className="w-5 h-5" />;
+      case 'Infrastructure': return <Building2 className="w-5 h-5" />;
+      case 'Government/Defense': return <Shield className="w-5 h-5" />;
+      case 'Chemical/Pharmaceutical': return <Award className="w-5 h-5" />;
+      case 'Technology': return <Target className="w-5 h-5" />;
+      default: return <Globe className="w-5 h-5" />;
     }
   };
 
   const getSectorColor = (sector: string) => {
     switch (sector) {
-      case 'Energy': return 'from-yellow-400 to-yellow-600';
-      case 'Infrastructure': return 'from-blue-400 to-blue-600';
-      case 'Government/Defense': return 'from-red-400 to-red-600';
-      case 'Technology': return 'from-purple-400 to-purple-600';
-      case 'Chemical/Pharmaceutical': return 'from-green-400 to-green-600';
-      default: return 'from-gray-400 to-gray-600';
+      case 'Energy': return 'bg-yellow-500';
+      case 'Infrastructure': return 'bg-blue-500';
+      case 'Government/Defense': return 'bg-red-500';
+      case 'Chemical/Pharmaceutical': return 'bg-green-500';
+      case 'Technology': return 'bg-purple-500';
+      default: return 'bg-gray-500';
     }
   };
 
@@ -181,6 +187,20 @@ export default function StatsDashboard({
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading Analytics Dashboard...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading Dashboard...</p>
+          </div>
         </div>
       </div>
     );
@@ -253,7 +273,7 @@ export default function StatsDashboard({
           <div className="space-y-8">
             {/* Key Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className={`executive-card metric-card metric-card-info p-6 ${animationClass}`}>
+              <div className={`executive-card metric-card metric-card-info p-6 ${animationKey}`}>
                 <div className="flex items-center">
                   <div className="p-3 bg-blue-100 rounded-xl">
                     <Target className="w-7 h-7 text-blue-600" />
@@ -265,7 +285,7 @@ export default function StatsDashboard({
                 </div>
               </div>
 
-              <div className={`executive-card metric-card metric-card-success p-6 roi-display ${animationClass}`}>
+              <div className={`executive-card metric-card metric-card-success p-6 roi-display ${animationKey}`}>
                 <div className="flex items-center">
                   <div className="p-3 bg-white/20 rounded-xl">
                     <TrendingUp className="w-7 h-7 text-white" />
@@ -279,7 +299,7 @@ export default function StatsDashboard({
                 </div>
               </div>
 
-              <div className={`executive-card metric-card metric-card-warning p-6 ${animationClass}`}>
+              <div className={`executive-card metric-card metric-card-warning p-6 ${animationKey}`}>
                 <div className="flex items-center">
                   <div className="p-3 bg-purple-100 rounded-xl">
                     <Building2 className="w-7 h-7 text-purple-600" />
@@ -291,7 +311,7 @@ export default function StatsDashboard({
                 </div>
               </div>
 
-              <div className={`executive-card metric-card p-6 ${animationClass}`}>
+              <div className={`executive-card metric-card p-6 ${animationKey}`}>
                 <div className="flex items-center">
                   <div className="p-3 bg-green-100 rounded-xl">
                     <Award className="w-7 h-7 text-green-600" />

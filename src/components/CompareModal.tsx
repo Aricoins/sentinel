@@ -72,30 +72,40 @@ interface CompareModalProps {
 type ComparisonSection = 'overview' | 'financial' | 'implementation' | 'risk' | 'strategic';
 
 export default function CompareModal({ isOpen, onClose, dnsos, onExport }: CompareModalProps) {
+  const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState<ComparisonSection>('overview');
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['basic-info']));
   const [isExporting, setIsExporting] = useState(false);
   const [savedComparison, setSavedComparison] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Close modal on ESC key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
     };
-    
-    if (isOpen) {
+
+    if (mounted) {
       document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+      return () => document.removeEventListener('keydown', handleEscape);
     }
-    
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, mounted]);
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (mounted && isOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [isOpen, mounted]);
 
   // Close modal on backdrop click
   const handleBackdropClick = (e: React.MouseEvent) => {
